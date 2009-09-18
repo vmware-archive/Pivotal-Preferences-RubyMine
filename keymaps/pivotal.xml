@@ -2,7 +2,6 @@
 <keymap version="1" name="pivotal" parent="Default for Mac OS X">
   <action id="$Delete">
     <keyboard-shortcut first-keystroke="DELETE" />
-    <keyboard-shortcut first-keystroke="control D" />
   </action>
   <action id="ActivateChangesToolWindow">
     <keyboard-shortcut first-keystroke="meta 9" />
@@ -62,9 +61,6 @@
     <keyboard-shortcut first-keystroke="shift meta alt F8" />
     <keyboard-shortcut first-keystroke="shift control F9" />
   </action>
-  <action id="Editor Delete">
-    <keyboard-shortcut first-keystroke="control D" />
-  </action>
   <action id="EditorCodeBlockEnd">
     <keyboard-shortcut first-keystroke="control CLOSE_BRACKET" />
   </action>
@@ -78,6 +74,10 @@
     <keyboard-shortcut first-keystroke="meta Y" />
     <keyboard-shortcut first-keystroke="shift control K" />
     <keyboard-shortcut first-keystroke="control Y" />
+  </action>
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="meta D" />
+    <keyboard-shortcut first-keystroke="control D" />
   </action>
   <action id="EditorIndentSelection">
     <keyboard-shortcut first-keystroke="TAB" />
