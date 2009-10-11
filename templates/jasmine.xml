@@ -13,9 +13,8 @@
       <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
-  <template name="jdesc" value="describe(&quot;$A$&quot;, function () {&#10;  it(&quot;should $B$&quot;, function() {&#10;    $END$&#10;  });&#10;});" description="Jasmine describe block, with one it" toReformat="true" toShortenFQNames="true">
+  <template name="jdesc" value="describe(&quot;$A$&quot;, function () {$END$});" description="Jasmine describe block" toReformat="false" toShortenFQNames="true">
     <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML" value="false" />
       <option name="XML" value="false" />
@@ -27,7 +26,7 @@
       <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
-  <template name="jit" value="it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
+  <template name="jit" value="it(&quot;should $B$&quot;, function() {$END$});&#10;" description="Jasmine it block" toReformat="false" toShortenFQNames="true">
     <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML" value="false" />
@@ -115,6 +114,47 @@
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
       <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jdes" value="describe(&quot;$A$&quot;, function () {&#10;  it(&quot;should $B$&quot;, function() {&#10;    $END$&#10;  });&#10;});" description="Jasmine describe block, with one it" toReformat="true" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+    </context>
+  </template>
+  <template name="jex" value="expect($B$).to$END$;&#10;" description="Jasmine expectation" toReformat="false" toShortenFQNames="true">
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+    </context>
+  </template>
+  <template name="jspy" value="spyOn($Object$, &quot;$METHOD$&quot;);" description="Jasmine spy (double)" toReformat="false" toShortenFQNames="true">
+    <variable name="Object" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="false" />
+      <option name="XML" value="false" />
+      <option name="RUBY" value="false" />
+      <option name="RHTML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
 </templateSet>
