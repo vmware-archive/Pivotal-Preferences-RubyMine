@@ -1,0 +1,3 @@
+[submodule "colors"]
+	path = colors
+	url = git@pivotal.github.com:heythisisnate/RubyMine-colors.git
