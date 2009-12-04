@@ -6,11 +6,11 @@ Pivotal Standard RubyMine Keymap
 
 To install these keybindings into RubyMine copy the pivotal.xml file to this path:
 
-`~/Library/Preferences/RubyMine10/keymaps/`
+`~/Library/Preferences/RubyMine20/keymaps/`
 
 ...or you can just run the following command:
 
-`wget -O ~/Library/Preferences/RubyMine10/keymaps/pivotal.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/keymaps/pivotal.xml`
+`wget -O ~/Library/Preferences/RubyMine20/keymaps/pivotal.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/keymaps/pivotal.xml`
 
 If RubyMine is running you will need to restart before the keybindings will be available.
 
@@ -30,12 +30,12 @@ These should be useful for any JavaScript/Jasmine project
 
 Clone & then copy jasmine.xml and webOS.xml into this path:
 
-`~/Library/Preferences/RubyMine10/templates/`
+`~/Library/Preferences/RubyMine20/templates/`
 
 ...or you can just run the following commands:
 
-`wget -O ~/Library/Preferences/RubyMine10/templates/jasmine.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/jasmine.xml`
+`wget -O ~/Library/Preferences/RubyMine20/templates/jasmine.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/jasmine.xml`
 
-`wget -O ~/Library/Preferences/RubyMine10/templates/webOS.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/webOS.xml`
+`wget -O ~/Library/Preferences/RubyMine20/templates/webOS.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/webOS.xml`
 
 If RubyMine is running you will need to restart before the templates will be available.
