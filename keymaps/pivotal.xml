@@ -33,16 +33,26 @@
   <action id="ChangesView.AddUnversioned">
     <keyboard-shortcut first-keystroke="alt A" />
   </action>
+  <action id="ChooseDebugConfiguration">
+    <keyboard-shortcut first-keystroke="meta alt F8" />
+  </action>
+  <action id="ChooseRunConfiguration" />
   <action id="CloneElement">
     <keyboard-shortcut first-keystroke="alt F5" />
     <keyboard-shortcut first-keystroke="shift F5" />
   </action>
-  <action id="CloseActiveTab" />
+  <action id="CloseActiveTab">
+    <keyboard-shortcut first-keystroke="meta ESCAPE" />
+  </action>
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="meta alt W" />
   </action>
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift meta W" />
+  </action>
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="control SPACE" />
+    <keyboard-shortcut first-keystroke="alt ESCAPE" />
   </action>
   <action id="CommentByLineComment">
     <keyboard-shortcut first-keystroke="meta SLASH" />
@@ -54,7 +64,6 @@
     <keyboard-shortcut first-keystroke="shift control C" />
   </action>
   <action id="Debug">
-    <keyboard-shortcut first-keystroke="meta alt F8" />
     <keyboard-shortcut first-keystroke="shift F9" />
   </action>
   <action id="DebugClass">
@@ -211,6 +220,7 @@
   <action id="OpenFile">
     <keyboard-shortcut first-keystroke="meta O" />
   </action>
+  <action id="OptimizeImports" />
   <action id="OverrideMethods" />
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift meta V" />
@@ -267,6 +277,9 @@
   <action id="UsageView.ShowRecentFindUsages" />
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="control meta alt H" />
+  </action>
+  <action id="WelcomeScreen.ReopenRecent">
+    <keyboard-shortcut first-keystroke="meta alt O" />
   </action>
 </keymap>
 
