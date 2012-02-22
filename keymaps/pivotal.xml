@@ -75,6 +75,7 @@
     <keyboard-shortcut first-keystroke="meta DIVIDE" />
     <keyboard-shortcut first-keystroke="control SLASH" />
   </action>
+  <action id="ContextHelp" />
   <action id="CopyPaths">
     <keyboard-shortcut first-keystroke="shift meta C" />
     <keyboard-shortcut first-keystroke="shift control C" />
