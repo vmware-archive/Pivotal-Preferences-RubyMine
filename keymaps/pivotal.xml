@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="pivotal" parent="Default for Mac OS X">
+  <action id="$Copy">
+    <keyboard-shortcut first-keystroke="meta C" />
+    <keyboard-shortcut first-keystroke="meta INSERT" />
+    <keyboard-shortcut first-keystroke="control C" />
+  </action>
+  <action id="$Cut">
+    <keyboard-shortcut first-keystroke="meta X" />
+    <keyboard-shortcut first-keystroke="shift DELETE" />
+    <keyboard-shortcut first-keystroke="control X" />
+  </action>
   <action id="$Delete">
     <keyboard-shortcut first-keystroke="DELETE" />
+    <keyboard-shortcut first-keystroke="control D" />
+  </action>
+  <action id="$Paste">
+    <keyboard-shortcut first-keystroke="meta V" />
+    <keyboard-shortcut first-keystroke="shift INSERT" />
+    <keyboard-shortcut first-keystroke="control V" />
   </action>
   <action id="ActivateChangesToolWindow">
     <keyboard-shortcut first-keystroke="meta 9" />
@@ -33,33 +49,55 @@
   <action id="ChangesView.AddUnversioned">
     <keyboard-shortcut first-keystroke="alt A" />
   </action>
+  <action id="ChooseDebugConfiguration">
+    <keyboard-shortcut first-keystroke="meta alt F8" />
+  </action>
+  <action id="ChooseRunConfiguration" />
   <action id="CloneElement">
     <keyboard-shortcut first-keystroke="alt F5" />
     <keyboard-shortcut first-keystroke="shift F5" />
   </action>
-  <action id="CloseActiveTab" />
+  <action id="CloseActiveTab">
+    <keyboard-shortcut first-keystroke="meta ESCAPE" />
+  </action>
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="meta alt W" />
   </action>
   <action id="CloseAllEditorsButActive">
     <keyboard-shortcut first-keystroke="shift meta W" />
   </action>
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="control SPACE" />
+    <keyboard-shortcut first-keystroke="alt ESCAPE" />
+  </action>
   <action id="CommentByLineComment">
     <keyboard-shortcut first-keystroke="meta SLASH" />
     <keyboard-shortcut first-keystroke="meta DIVIDE" />
     <keyboard-shortcut first-keystroke="control SLASH" />
   </action>
+  <action id="ContextHelp" />
   <action id="CopyPaths">
     <keyboard-shortcut first-keystroke="shift meta C" />
     <keyboard-shortcut first-keystroke="shift control C" />
   </action>
   <action id="Debug">
-    <keyboard-shortcut first-keystroke="meta alt F8" />
     <keyboard-shortcut first-keystroke="shift F9" />
   </action>
   <action id="DebugClass">
     <keyboard-shortcut first-keystroke="shift meta alt F8" />
     <keyboard-shortcut first-keystroke="shift control F9" />
+  </action>
+  <action id="Editor Copy">
+    <keyboard-shortcut first-keystroke="control C" />
+  </action>
+  <action id="Editor Cut">
+    <keyboard-shortcut first-keystroke="control X" />
+  </action>
+  <action id="Editor Delete">
+    <keyboard-shortcut first-keystroke="control D" />
+  </action>
+  <action id="Editor Paste">
+    <keyboard-shortcut first-keystroke="control V" />
   </action>
   <action id="EditorCodeBlockEnd">
     <keyboard-shortcut first-keystroke="control CLOSE_BRACKET" />
@@ -74,10 +112,6 @@
     <keyboard-shortcut first-keystroke="meta Y" />
     <keyboard-shortcut first-keystroke="shift control K" />
     <keyboard-shortcut first-keystroke="control Y" />
-  </action>
-  <action id="EditorDuplicate">
-    <keyboard-shortcut first-keystroke="meta D" />
-    <keyboard-shortcut first-keystroke="control D" />
   </action>
   <action id="EditorIndentSelection">
     <keyboard-shortcut first-keystroke="TAB" />
@@ -201,6 +235,10 @@
     <keyboard-shortcut first-keystroke="control ENTER" />
     <keyboard-shortcut first-keystroke="meta N" />
   </action>
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="control TAB" />
+    <keyboard-shortcut first-keystroke="control meta alt TAB" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta CLOSE_BRACKET" />
     <keyboard-shortcut first-keystroke="meta alt RIGHT" />
@@ -211,11 +249,16 @@
   <action id="OpenFile">
     <keyboard-shortcut first-keystroke="meta O" />
   </action>
+  <action id="OptimizeImports" />
   <action id="OverrideMethods" />
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift meta V" />
     <keyboard-shortcut first-keystroke="shift meta INSERT" />
     <keyboard-shortcut first-keystroke="shift control V" />
+  </action>
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="shift control TAB" />
+    <keyboard-shortcut first-keystroke="shift control meta alt TAB" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta OPEN_BRACKET" />
@@ -265,8 +308,12 @@
   </action>
   <action id="ToggleBookmark" />
   <action id="UsageView.ShowRecentFindUsages" />
+  <action id="Vcs.QuickListPopupAction" />
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="control meta alt H" />
+  </action>
+  <action id="WelcomeScreen.ReopenRecent">
+    <keyboard-shortcut first-keystroke="meta alt O" />
   </action>
 </keymap>
 
