@@ -223,6 +223,9 @@
     <keyboard-shortcut first-keystroke="control meta alt RIGHT" />
     <keyboard-shortcut first-keystroke="control meta alt LEFT" />
   </action>
+  <action id="Git.Push">
+    <keyboard-shortcut first-keystroke="shift meta P" />
+  </action>
   <action id="MoveStatementDown">
     <keyboard-shortcut first-keystroke="shift control DOWN" />
     <keyboard-shortcut first-keystroke="control meta DOWN" />
@@ -294,17 +297,20 @@
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="control meta alt UP" />
   </action>
-  <action id="StepInto">
-    <keyboard-shortcut first-keystroke="alt F9" />
-    <keyboard-shortcut first-keystroke="F7" />
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="control alt ENTER" />
   </action>
-  <action id="StepOut">
-    <keyboard-shortcut first-keystroke="meta alt F10" />
-    <keyboard-shortcut first-keystroke="shift F8" />
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="control alt DOWN" />
   </action>
-  <action id="StepOver">
-    <keyboard-shortcut first-keystroke="alt F10" />
-    <keyboard-shortcut first-keystroke="F8" />
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="control alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="control alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="control alt UP" />
   </action>
   <action id="ToggleBookmark" />
   <action id="UsageView.ShowRecentFindUsages" />
