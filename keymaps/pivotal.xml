@@ -212,6 +212,14 @@
     <keyboard-shortcut first-keystroke="shift meta alt N" />
     <keyboard-shortcut first-keystroke="control N" />
   </action>
+  <action id="HideAllWindows">
+    <keyboard-shortcut first-keystroke="alt F11" />
+    <keyboard-shortcut first-keystroke="shift meta F12" />
+  </action>
+  <action id="HippieCompletion">
+    <keyboard-shortcut first-keystroke="alt SLASH" />
+    <keyboard-shortcut first-keystroke="alt SPACE" />
+  </action>
   <action id="MethodDown">
     <keyboard-shortcut first-keystroke="alt DOWN" />
   </action>
@@ -314,6 +322,11 @@
   </action>
   <action id="WelcomeScreen.ReopenRecent">
     <keyboard-shortcut first-keystroke="meta alt O" />
+  </action>
+  <action id="rake:spec">
+    <keyboard-shortcut first-keystroke="meta F10" />
+    <keyboard-shortcut first-keystroke="shift control meta F8" />
+    <keyboard-shortcut first-keystroke="control F10" />
   </action>
 </keymap>
 
