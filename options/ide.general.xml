@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="GeneralSettings">
+    <option name="showTipsOnStartup" value="false" />
+    <option name="showOccupiedMemory" value="true" />
+    <option name="reopenLastProject" value="true" />
+    <option name="confirmExit" value="false" />
+  </component>
+</application>
+
