@@ -2,7 +2,6 @@
 <keymap version="1" name="pivotal" parent="Default for Mac OS X">
   <action id="$Copy">
     <keyboard-shortcut first-keystroke="meta C" />
-    <keyboard-shortcut first-keystroke="meta INSERT" />
     <keyboard-shortcut first-keystroke="control C" />
   </action>
   <action id="$Cut">
@@ -16,7 +15,6 @@
   </action>
   <action id="$Paste">
     <keyboard-shortcut first-keystroke="meta V" />
-    <keyboard-shortcut first-keystroke="shift INSERT" />
     <keyboard-shortcut first-keystroke="control V" />
   </action>
   <action id="ActivateChangesToolWindow">
@@ -107,6 +105,7 @@
   </action>
   <action id="EditorDelete">
     <keyboard-shortcut first-keystroke="DELETE" />
+    <keyboard-shortcut first-keystroke="control D" />
   </action>
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="meta Y" />
@@ -193,6 +192,9 @@
   <action id="Generate">
     <keyboard-shortcut first-keystroke="control ENTER" />
   </action>
+  <action id="Git.Push">
+    <keyboard-shortcut first-keystroke="shift meta P" />
+  </action>
   <action id="GotoClass" />
   <action id="GotoDeclaration">
     <keyboard-shortcut first-keystroke="meta B" />
@@ -220,11 +222,8 @@
     <keyboard-shortcut first-keystroke="alt UP" />
   </action>
   <action id="MoveEditorToOppositeTabGroup">
-    <keyboard-shortcut first-keystroke="control meta alt RIGHT" />
-    <keyboard-shortcut first-keystroke="control meta alt LEFT" />
-  </action>
-  <action id="Git.Push">
-    <keyboard-shortcut first-keystroke="shift meta P" />
+    <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
+    <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
   </action>
   <action id="MoveStatementDown">
     <keyboard-shortcut first-keystroke="shift control DOWN" />
@@ -256,7 +255,6 @@
   <action id="OverrideMethods" />
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift meta V" />
-    <keyboard-shortcut first-keystroke="shift meta INSERT" />
     <keyboard-shortcut first-keystroke="shift control V" />
   </action>
   <action id="PrevSplitter">
@@ -292,10 +290,10 @@
     <keyboard-shortcut first-keystroke="shift control F10" />
   </action>
   <action id="SplitHorizontally">
-    <keyboard-shortcut first-keystroke="control meta alt DOWN" />
+    <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
   </action>
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="control meta alt UP" />
+    <keyboard-shortcut first-keystroke="shift control meta alt UP" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="control alt ENTER" />
@@ -312,14 +310,22 @@
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="control alt UP" />
   </action>
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="shift control TAB" />
+  </action>
   <action id="ToggleBookmark" />
-  <action id="UsageView.ShowRecentFindUsages" />
+  <action id="UsageView.ShowRecentFindUsages">
+    <keyboard-shortcut first-keystroke="meta E" />
+  </action>
   <action id="Vcs.QuickListPopupAction" />
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="control meta alt H" />
   </action>
   <action id="WelcomeScreen.ReopenRecent">
     <keyboard-shortcut first-keystroke="meta alt O" />
+  </action>
+  <action id="rake:spec">
+    <keyboard-shortcut first-keystroke="control F10" />
   </action>
 </keymap>
 
