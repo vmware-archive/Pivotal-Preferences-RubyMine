@@ -237,6 +237,10 @@
     <keyboard-shortcut first-keystroke="control ENTER" />
     <keyboard-shortcut first-keystroke="meta N" />
   </action>
+  <action id="NextDiff">
+    <keyboard-shortcut first-keystroke="F7" />
+    <keyboard-shortcut first-keystroke="meta alt DOWN" />
+  </action>
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="control TAB" />
     <keyboard-shortcut first-keystroke="control meta alt TAB" />
@@ -260,6 +264,10 @@
   <action id="PrevSplitter">
     <keyboard-shortcut first-keystroke="shift control TAB" />
     <keyboard-shortcut first-keystroke="shift control meta alt TAB" />
+  </action>
+  <action id="PreviousDiff">
+    <keyboard-shortcut first-keystroke="shift F7" />
+    <keyboard-shortcut first-keystroke="meta alt UP" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta OPEN_BRACKET" />
