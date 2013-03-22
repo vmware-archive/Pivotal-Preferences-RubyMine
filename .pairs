@@ -1,0 +1,23 @@
+# This file is managed by Chef!
+# Override node.default["git_pairs_authors"] and node.default["git_pairs_domain"] in attributes/git_pairs.rb to modify.
+
+pairs:
+  aml: Alex Lobascio; alobascio
+  bc: Brian Cunnie; cunnie
+  cd: Colin Deeb; deeb
+  dr: Doc Ritezel; doc
+  jb: Jonathan Berger; jonathanpberger
+  jd: Jeff Dean; jdean
+  jrhb: Jonathan Barnes
+  lk: Laurence Koret; lkoret
+  mk: Matthew Kocher; mkocher
+  rh: Ross Hale; rhale
+  rk: Reed Kennedy; reed
+  sb: Sean Beckett; sean
+  tlp: Tonya Podkuiko; tpodkuiko
+
+email:
+  prefix: pair
+  domain: pivotallabs.com
+
+global: true
