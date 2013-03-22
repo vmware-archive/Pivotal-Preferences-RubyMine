@@ -173,6 +173,9 @@
     <option name="DEFAULT_BRACKETS">
       <value />
     </option>
+    <option name="DEFAULT_COMMA">
+      <value />
+    </option>
     <option name="DEFAULT_DOT">
       <value />
     </option>
@@ -180,6 +183,9 @@
       <value />
     </option>
     <option name="DEFAULT_PARENTHS">
+      <value />
+    </option>
+    <option name="DEFAULT_SEMICOLON">
       <value />
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
@@ -869,6 +875,9 @@
       <value />
     </option>
     <option name="SCOPE_KEY_Production">
+      <value />
+    </option>
+    <option name="SCOPE_KEY_Project Files">
       <value />
     </option>
     <option name="SCOPE_KEY_Tests">
