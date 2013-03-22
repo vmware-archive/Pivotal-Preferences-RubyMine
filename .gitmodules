@@ -1,3 +1,0 @@
-[submodule "colors"]
-	path = colors
-	url = git://github.com/codeword/RubyMine-colors.git
