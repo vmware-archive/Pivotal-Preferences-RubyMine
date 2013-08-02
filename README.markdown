@@ -12,10 +12,19 @@ To install these keybindings into RubyMine copy the pivotal.xml file to this pat
 ~/Library/Preferences/RubyMineXX/keymaps/
 ~~~
 
+and then copy the options/macros.xml file to this path:
+
+~~~
+~/Library/Preferences/RubyMineXX/options/
+~~~
+
 ...or you can just run the following command:
+
+Warning: copying the macros down will simply replace your existing macros file. Merge by hand if that's a problem.
 
 ~~~
 wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/keymaps/pivotal.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/keymaps/Pivotal.xml
+wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/options/macros.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/options/macros.xml
 ~~~
 
 If RubyMine is running you will need to restart before the keybindings will be available.
