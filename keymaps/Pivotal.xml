@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Pivotal" parent="Default for Mac OS X">
   <action id="Macro.run whole test file">
-    <keyboard-shortcut first-keystroke="meta T" />
+    <keyboard-shortcut first-keystroke="control meta alt F8" />
   </action>
   <action id="$Copy">
     <keyboard-shortcut first-keystroke="meta C" />
