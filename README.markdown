@@ -18,9 +18,7 @@ and then copy the options/macros.xml file to this path:
 ~/Library/Preferences/RubyMineXX/options/
 ~~~
 
-...or you can just run the following command:
-
-Warning: copying the macros down will simply replace your existing macros file. Merge by hand if that's a problem.
+...or you can just run the following command (warning: copying the macros down will simply replace your existing macros file. Merge by hand if that's a problem.):
 
 ~~~
 wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/keymaps/pivotal.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/keymaps/Pivotal.xml
