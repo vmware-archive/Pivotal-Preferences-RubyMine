@@ -27,6 +27,24 @@ wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/options/macros.x
 
 If RubyMine is running you will need to restart before the keybindings will be available.
 
+Pivotal Standard RubyMine JVM Options
+-------------------------------------
+
+These are the JVM options that we find to work well for the kinds of projects we develop on modern iMacs.
+To install these options into RubyMine copy the idea.vmoptions file to this path:
+
+~~~
+~/Library/Preferences/RubyMineXX/
+~~~
+
+...or you can just run the following command:
+
+~~~
+wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/idea.vmoptions http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/preferences/idea.vmoptions
+~~~
+
+If RubyMine is running you will need to restart before the preferences will take effect.
+
 
 RubyMine Live Templates for working with Ruby
 ---------------------------------------------
