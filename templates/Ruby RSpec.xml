@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="Ruby RSpec">
+  <template name="des" value="describe $SYSTEM_UNDER_TEST$ do&#10;    $CURSOR$&#10;end" description="describe" toReformat="true" toShortenFQNames="true">
+    <variable name="SYSTEM_UNDER_TEST" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CURSOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="RUBY" value="true" />
+    </context>
+  </template>
+  <template name="con" value="context $SYSTEM_UNDER_TEST$ do&#10;    $END$&#10;end" description="context" toReformat="true" toShortenFQNames="true">
+    <variable name="SYSTEM_UNDER_TEST" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="RUBY" value="true" />
+    </context>
+  </template>
+  <template name="it" value="it '$DOES_SOME_COOL_STUFF$'" description="it" toReformat="true" toShortenFQNames="true">
+    <variable name="DOES_SOME_COOL_STUFF" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="bef" value="before do&#10;  $END$&#10;end" description="before" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="RUBY" value="true" />
+    </context>
+  </template>
+</templateSet>
+
