@@ -3,8 +3,8 @@
 ## Installation ##
 **Note:** _It is recommended to not be running RubyMine when you set these symlinks as RM sometimes keeps changes in memory and writes them when you exit which could cause it to overwrite some of these settings.  If RubyMine is running you will need to restart before the keybindings will be available._
 ### To install ###
-    git clone http://github.com/pivotal/Pivotal-Preferences-RubyMine.git RubyminePreferencesPivotal
-    cd RubyminePreferencesPivotal
+    git clone http://github.com/pivotal/Pivotal-Preferences-RubyMine.git
+    cd Pivotal-Preferences-RubyMine
     rake symlink:all
 
 ### To uninstall ###
@@ -27,8 +27,5 @@
 * **Pivotal Standard RubyMine Keymap**
 * **Pivotal Standard RubyMine JVM Options** _These are the JVM options that we find to work well for the kinds of projects we develop on modern iMacs._
 * **RubyMine Live Templates for working with Ruby** _A few handy shortcuts in addition to those shipping with RubyMine._
-    * **Palm(R) webOS(tm)** Included are templates for (among other things):
-        * blocking out the main entry points for a webOS Scene Assistant
-        * making a new protoype property on a JavaScript class
     * **Jasmine**
         * the various Jasmine blocks (describe(), it(), runs(), etc.)
