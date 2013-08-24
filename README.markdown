@@ -1,100 +1,34 @@
-Pivotal RubyMine Preferences
-============================
+# Pivotal RubyMine Preferences #
 
-**IMPORTANT NOTE:  In all of the following paths/commands, replace "XX" with your proper RubyMine version**
+## Installation ##
+**Note:** _It is recommended to not be running RubyMine when you set these symlinks as RM sometimes keeps changes in memory and writes them when you exit which could cause it to overwrite some of these settings.  If RubyMine is running you will need to restart before the keybindings will be available._
+### To install ###
+    git clone http://github.com/pivotal/Pivotal-Preferences-RubyMine.git RubyminePreferencesPivotal
+    cd RubyminePreferencesPivotal
+    rake symlink:all
 
-Pivotal Standard RubyMine Keymap
---------------------------------
+### To uninstall ###
+    rake reset:all
 
-To install these keybindings into RubyMine copy the pivotal.xml file to this path:
-
-~~~
-~/Library/Preferences/RubyMineXX/keymaps/
-~~~
-
-and then copy the options/macros.xml file to this path:
-
-~~~
-~/Library/Preferences/RubyMineXX/options/
-~~~
-
-...or you can just run the following command (warning: copying the macros down will simply replace your existing macros file. Merge by hand if that's a problem.):
-
-~~~
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/keymaps/pivotal.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/keymaps/Pivotal.xml
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/options/macros.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/options/macros.xml
-~~~
-
-If RubyMine is running you will need to restart before the keybindings will be available.
-
-Pivotal Standard RubyMine JVM Options
--------------------------------------
-
-These are the JVM options that we find to work well for the kinds of projects we develop on modern iMacs.
-To install these options into RubyMine copy the idea.vmoptions file to this path:
-
-~~~
-~/Library/Preferences/RubyMineXX/
-~~~
-
-...or you can just run the following command:
-
-~~~
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/idea.vmoptions http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/preferences/idea.vmoptions
-~~~
-
-If RubyMine is running you will need to restart before the preferences will take effect.
+### To install individual components ###
+	rake symlink:codestyles  # Symlinks codestyles into /Users/jbarnes/Library/Preferences/RubyMine50
+	rake symlink:colors      # Symlinks colors into /Users/jbarnes/Library/Preferences/RubyMine50
+	rake symlink:keymaps     # Symlinks keymaps into /Users/jbarnes/Library/Preferences/RubyMine50
+	rake symlink:options     # Symlinks all files in options into /Users/jbarnes/Library/Preferences/RubyMine50/options
+	rake symlink:templates   # Symlinks templates into /Users/jbarnes/Library/Preferences/RubyMine50
+	rake reset:codestyles    # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/codestyles
+	rake reset:colors        # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/colors
+	rake reset:keymaps       # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/keymaps
+	rake reset:options       # Resets all symlinked files in /Users/jbarnes/Library/Preferences/RubyMine50/options
+	rake reset:templates     # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/templates
 
 
-RubyMine Live Templates for working with Ruby
----------------------------------------------
-
-A few handy shortcuts in addition to those shipping with RubyMine.
-
-**To Install:**
-
-Clone & then copy Ruby.xml into this path:
-
-~~~
-~/Library/Preferences/RubyMineXX/templates/
-~~~
-
-...or you can just run the following command:
-
-~~~
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/templates/Ruby.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/Ruby.xml
-~~~
-
-If RubyMine is running you will need to restart before the templates will be available.
-
-
-RubyMine Live Templates for writing Palm(R) webOS(tm)
------------------------------------------------------
-
-Included are templates for (among other things):
-
-  * the various Jasmine blocks (describe(), it(), runs(), etc.)
-  * blocking out the main entry points for a webOS Scene Assistant
-  * making a new protoype property on a JavaScript class
-
-These should be useful for any JavaScript/Jasmine project
-
-**To Install:**
-
-Clone & then copy jasmine.xml and webOS.xml into this path:
-
-~~~
-~/Library/Preferences/RubyMineXX/templates/
-~~~
-
-...or you can just run the following commands:
-
-~~~
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/templates/jasmine.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/jasmine.xml
-~~~
-
-~~~
-wget --no-check-certificate -O ~/Library/Preferences/RubyMineXX/templates/webOS.xml http://github.com/pivotal/Pivotal-Preferences-RubyMine/raw/master/templates/webOS.xml
-~~~
-
-If RubyMine is running you will need to restart before the templates will be available.
+## These preferences include customizations for: ##
+* **Pivotal Standard RubyMine Keymap**
+* **Pivotal Standard RubyMine JVM Options** _These are the JVM options that we find to work well for the kinds of projects we develop on modern iMacs._
+* **RubyMine Live Templates for working with Ruby** _A few handy shortcuts in addition to those shipping with RubyMine._
+    * **Palm(R) webOS(tm)** Included are templates for (among other things):
+        * blocking out the main entry points for a webOS Scene Assistant
+        * making a new protoype property on a JavaScript class
+    * **Jasmine**
+        * the various Jasmine blocks (describe(), it(), runs(), etc.)
