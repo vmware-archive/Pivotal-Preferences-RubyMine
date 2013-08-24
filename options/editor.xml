@@ -11,6 +11,7 @@
     <option name="IS_ENSURE_NEWLINE_AT_EOF" value="true" />
     <option name="SHOW_QUICK_DOC_ON_MOUSE_OVER_ELEMENT" value="false" />
     <option name="QUICK_DOC_ON_MOUSE_OVER_DELAY_MS" value="500" />
+    <option name="SHOW_INTENTION_BULB" value="true" />
     <option name="IS_CARET_BLINKING" value="true" />
     <option name="CARET_BLINKING_PERIOD" value="500" />
     <option name="IS_RIGHT_MARGIN_SHOWN" value="true" />
