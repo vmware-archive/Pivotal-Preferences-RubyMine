@@ -11,16 +11,16 @@
     rake reset:all
 
 ### To install individual components ###
-	rake symlink:codestyles  # Symlinks codestyles into /Users/jbarnes/Library/Preferences/RubyMine50
-	rake symlink:colors      # Symlinks colors into /Users/jbarnes/Library/Preferences/RubyMine50
-	rake symlink:keymaps     # Symlinks keymaps into /Users/jbarnes/Library/Preferences/RubyMine50
-	rake symlink:options     # Symlinks all files in options into /Users/jbarnes/Library/Preferences/RubyMine50/options
-	rake symlink:templates   # Symlinks templates into /Users/jbarnes/Library/Preferences/RubyMine50
-	rake reset:codestyles    # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/codestyles
-	rake reset:colors        # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/colors
-	rake reset:keymaps       # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/keymaps
-	rake reset:options       # Resets all symlinked files in /Users/jbarnes/Library/Preferences/RubyMine50/options
-	rake reset:templates     # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMine50/templates
+	rake symlink:codestyles  # Symlinks codestyles into /Users/jbarnes/Library/Preferences/RubyMineXX
+	rake symlink:colors      # Symlinks colors into /Users/jbarnes/Library/Preferences/RubyMineXX
+	rake symlink:keymaps     # Symlinks keymaps into /Users/jbarnes/Library/Preferences/RubyMineXX
+	rake symlink:options     # Symlinks all files in options into /Users/jbarnes/Library/Preferences/RubyMineXX/options
+	rake symlink:templates   # Symlinks templates into /Users/jbarnes/Library/Preferences/RubyMineXX
+	rake reset:codestyles    # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/codestyles
+	rake reset:colors        # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/colors
+	rake reset:keymaps       # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/keymaps
+	rake reset:options       # Resets all symlinked files in /Users/jbarnes/Library/Preferences/RubyMineXX/options
+	rake reset:templates     # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/templates
 
 
 ## These preferences include customizations for: ##
