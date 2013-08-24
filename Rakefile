@@ -10,7 +10,7 @@ namespace :symlink do
   DIRS.each do |dir_to_symlink|
     desc "Symlinks #{dir_to_symlink} into #{DEST}"
     task dir_to_symlink.to_sym do
-      safe_symlink2(dir_to_symlink)
+      safe_symlink(File.join(File.expand_path('.'), dir_to_symlink), File.join(DEST, dir_to_symlink))
     end
   end
 
@@ -19,7 +19,8 @@ namespace :symlink do
     task dir_with_files.to_sym do
       Dir.foreach(File.join(File.expand_path('.'), dir_with_files)) do |file|
         next if file == '.' or file == '..'
-        safe_symlink2(File.join(dir_with_files, file))
+        f = File.join(dir_with_files, file)
+        safe_symlink(File.join(File.expand_path('.'), f), File.join(DEST, f))
       end
     end
   end
@@ -76,10 +77,6 @@ task :reset do
   end
 end
 
-def safe_symlink2(file)
-  safe_symlink(File.join(File.expand_path('.'), file), File.join(DEST, file))
-end
-
 def safe_symlink(from, to)
   run("rm #{to}") if File.symlink?(to)
   run("mv #{to} #{to}.bak") if File.exist?(to)
@@ -87,7 +84,10 @@ def safe_symlink(from, to)
 end
 
 def reset_from_bak(file)
-  run("rm #{file} && mv #{file}.bak #{file}") if(File.symlink?(file) && File.exist?("#{file}.bak"))
+  if(File.symlink?(file))
+    run("rm #{file}")
+    run("mv #{file}.bak #{file}") if(File.exist?("#{file}.bak"))
+  end
 end
 
 def run(cmd)
