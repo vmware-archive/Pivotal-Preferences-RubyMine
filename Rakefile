@@ -1,5 +1,5 @@
 #require 'pry'
-DIRS = ['codestyles', 'colors', 'keymaps', 'templates']
+DIRS = ['codestyles', 'keymaps', 'templates']
 FILES_IN_DIRS = ['options']
 DEST = Dir[File.expand_path('~/Library/Preferences/') + "/RubyMine*"].last
 
