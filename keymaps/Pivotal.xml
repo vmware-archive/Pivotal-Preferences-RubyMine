@@ -201,6 +201,7 @@
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="shift control N" />
     <keyboard-shortcut first-keystroke="shift meta N" />
+    <keyboard-shortcut first-keystroke="shift meta O" />
   </action>
   <action id="GotoLine">
     <keyboard-shortcut first-keystroke="meta L" />
@@ -252,9 +253,7 @@
     <keyboard-shortcut first-keystroke="shift meta CLOSE_BRACKET" />
     <keyboard-shortcut first-keystroke="meta alt RIGHT" />
   </action>
-  <action id="OpenDirectoryProject">
-    <keyboard-shortcut first-keystroke="shift meta O" />
-  </action>
+  <action id="OpenDirectoryProject" />
   <action id="OpenFile">
     <keyboard-shortcut first-keystroke="meta O" />
   </action>
