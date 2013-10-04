@@ -147,6 +147,10 @@
   <action id="EditorScrollUp">
     <keyboard-shortcut first-keystroke="control UP" />
   </action>
+  <action id="EditorStartNewLine">
+    <keyboard-shortcut first-keystroke="shift ENTER" />
+    <keyboard-shortcut first-keystroke="meta ENTER" />
+  </action>
   <action id="EditorTextEnd">
     <keyboard-shortcut first-keystroke="meta END" />
     <keyboard-shortcut first-keystroke="meta DOWN" />
