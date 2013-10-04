@@ -229,8 +229,8 @@
     <keyboard-shortcut first-keystroke="alt UP" />
   </action>
   <action id="MoveEditorToOppositeTabGroup">
-    <keyboard-shortcut first-keystroke="control meta alt RIGHT" />
-    <keyboard-shortcut first-keystroke="control meta alt LEFT" />
+    <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
+    <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
   </action>
   <action id="MoveStatementDown">
     <keyboard-shortcut first-keystroke="shift control DOWN" />
@@ -297,10 +297,10 @@
     <keyboard-shortcut first-keystroke="shift control F10" />
   </action>
   <action id="SplitHorizontally">
-    <keyboard-shortcut first-keystroke="control meta alt DOWN" />
+    <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
   </action>
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="control meta alt UP" />
+    <keyboard-shortcut first-keystroke="shift control meta alt UP" />
   </action>
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="alt F9" />
