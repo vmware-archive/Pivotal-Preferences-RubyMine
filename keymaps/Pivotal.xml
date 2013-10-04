@@ -275,6 +275,10 @@
     <keyboard-shortcut first-keystroke="shift meta OPEN_BRACKET" />
     <keyboard-shortcut first-keystroke="meta alt LEFT" />
   </action>
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift meta alt T" />
+    <keyboard-shortcut first-keystroke="control T" />
+  </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="meta alt L" />
     <keyboard-shortcut first-keystroke="control alt L" />
