@@ -7,6 +7,9 @@
     cd Pivotal-Preferences-RubyMine
     rake symlink:all
 
+This will install the preferences into your *latest* version of RubyMine found in your ~/Library/Preferences folder. 
+For example, if you have both RubyMine5 and RubyMine6 installed, it will only install the preferences into RubyMine6.
+
 ### To uninstall ###
     rake reset:all
 
