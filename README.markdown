@@ -14,16 +14,16 @@ For example, if you have both RubyMine5 and RubyMine6 installed, it will only in
     rake reset:all
 
 ### To install individual components ###
-	rake symlink:codestyles  # Symlinks codestyles into /Users/jbarnes/Library/Preferences/RubyMineXX
-	rake symlink:colors      # Symlinks colors into /Users/jbarnes/Library/Preferences/RubyMineXX
-	rake symlink:keymaps     # Symlinks keymaps into /Users/jbarnes/Library/Preferences/RubyMineXX
-	rake symlink:options     # Symlinks all files in options into /Users/jbarnes/Library/Preferences/RubyMineXX/options
-	rake symlink:templates   # Symlinks templates into /Users/jbarnes/Library/Preferences/RubyMineXX
-	rake reset:codestyles    # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/codestyles
-	rake reset:colors        # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/colors
-	rake reset:keymaps       # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/keymaps
-	rake reset:options       # Resets all symlinked files in /Users/jbarnes/Library/Preferences/RubyMineXX/options
-	rake reset:templates     # Resets symlinked dir /Users/jbarnes/Library/Preferences/RubyMineXX/templates
+	rake symlink:codestyles  # Symlinks codestyles into ~/Library/Preferences/RubyMineXX
+	rake symlink:colors      # Symlinks colors into ~/Library/Preferences/RubyMineXX
+	rake symlink:keymaps     # Symlinks keymaps into ~/Library/Preferences/RubyMineXX
+	rake symlink:options     # Symlinks all files in options into ~/Library/Preferences/RubyMineXX/options
+	rake symlink:templates   # Symlinks templates into ~/Library/Preferences/RubyMineXX
+	rake reset:codestyles    # Resets symlinked dir ~/Library/Preferences/RubyMineXX/codestyles
+	rake reset:colors        # Resets symlinked dir ~/Library/Preferences/RubyMineXX/colors
+	rake reset:keymaps       # Resets symlinked dir ~/Library/Preferences/RubyMineXX/keymaps
+	rake reset:options       # Resets all symlinked files in ~/Library/Preferences/RubyMineXX/options
+	rake reset:templates     # Resets symlinked dir ~/Library/Preferences/RubyMineXX/templates
 
 
 ## These preferences include customizations for: ##
