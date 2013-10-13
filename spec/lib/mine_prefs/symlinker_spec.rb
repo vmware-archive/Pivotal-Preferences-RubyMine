@@ -2,7 +2,7 @@ require "mine_prefs/symlinker"
 
 module MinePrefs
   describe Symlinker do
-    describe "#install" do
+    describe "#execute" do
       it "symlinks all files to install into the target" do
         installation = double :installation, source_location: "/source", files_to_install: ["foo/bar"], target: "/baz"
 
@@ -10,7 +10,7 @@ module MinePrefs
 
         filesystem.should_receive(:symlink).with("/source/foo/bar", "/baz/foo/bar")
 
-        Symlinker.new(filesystem: filesystem).install(installation)
+        Symlinker.new(filesystem: filesystem).execute(installation)
       end
     end
   end

@@ -6,7 +6,7 @@ module MinePrefs
       @filesystem = filesystem
     end
 
-    def prepare_installation(installation_bundle)
+    def execute(installation_bundle)
       installation_bundle.files_to_install.each do |file_to_install|
         begin
           filesystem.rm_rf(File.join(installation_bundle.target, file_to_install))

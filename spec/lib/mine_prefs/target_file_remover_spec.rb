@@ -11,7 +11,7 @@ module MinePrefs
 
         TargetFileRemover.new(
             filesystem: filesystem
-        ).prepare_installation(installation_bundle)
+        ).execute(installation_bundle)
       end
     end
 
@@ -24,7 +24,7 @@ module MinePrefs
 
         TargetFileRemover.new(
             filesystem: filesystem
-        ).prepare_installation(installation_bundle)
+        ).execute(installation_bundle)
       end
     end
 

@@ -1,30 +1,15 @@
 module MinePrefs
   class Installation
-    attr_reader :preparers, :installers, :installation_payload
+    attr_reader :install_commands, :installation_payload
 
-    def initialize(preparers: [], installers: [], installation_payload: nil)
-      @preparers = preparers
-      @installers = installers
+    def initialize(install_commands: [], installation_payload: nil)
+      @install_commands = install_commands
       @installation_payload = installation_payload
     end
 
     def install
-      run_preparers
-      run_installers
-    end
-
-
-    private
-
-    def run_installers
-      installers.each do |installer|
-        installer.install installation_payload
-      end
-    end
-
-    def run_preparers
-      preparers.each do |preparer|
-        preparer.prepare_installation installation_payload
+      install_commands.each do |install_command|
+        install_command.execute installation_payload
       end
     end
   end

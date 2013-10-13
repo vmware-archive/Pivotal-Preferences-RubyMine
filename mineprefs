@@ -25,6 +25,9 @@ installation_payload = MinePrefs::InstallationPayload.new(
 
 MinePrefs::Installation.new(
   installation_payload: installation_payload,
-  preparers: [MinePrefs::BackupAgent.new, MinePrefs::TargetFileRemover.new],
-  installers: [MinePrefs::Symlinker.new]
+  install_commands: [
+    MinePrefs::BackupAgent.new,
+    MinePrefs::TargetFileRemover.new,
+    MinePrefs::Symlinker.new
+  ],
 ).install

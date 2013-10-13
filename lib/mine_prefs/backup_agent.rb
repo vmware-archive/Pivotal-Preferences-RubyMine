@@ -6,7 +6,7 @@ module MinePrefs
       @filesystem = filesystem
     end
 
-    def prepare_installation(installation)
+    def execute(installation)
       installation.files_to_install.each do |file|
         target_file = File.join(installation.target, file)
         begin
