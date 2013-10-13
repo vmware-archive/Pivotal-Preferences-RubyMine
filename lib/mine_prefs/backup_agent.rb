@@ -9,7 +9,10 @@ module MinePrefs
     def prepare_installation(installation)
       installation.files_to_install.each do |file|
         target_file = File.join(installation.target, file)
-        filesystem.mv(target_file, "#{target_file}.bak")
+        begin
+          filesystem.mv(target_file, "#{target_file}.bak", force: true)
+        rescue Errno::ENOENT
+        end
       end
     end
   end
