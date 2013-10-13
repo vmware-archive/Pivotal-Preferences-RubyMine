@@ -28,3 +28,11 @@ end
 Then(/^the Pivotal Preferences should be installed and take effect when I start RubyMine$/) do
   Pathname.new(installed_path_to("codestyles")).realpath.should == Pathname.new(repo_path_to("codestyles"))
 end
+
+When(/^the Pivotal Preferences are already installed$/) do
+  system("TARGET_DIR=tmp/RubyMine60 ruby mineprefs install")
+end
+
+Then(/^the Pivotal Preferences should be uninstalled$/) do
+  Pathname.new(installed_path_to("codestyles")).realpath.should == Pathname.new(installed_path_to("codestyles"))
+end

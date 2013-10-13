@@ -1,20 +1,18 @@
 module MinePrefs
   module Commands
-    class BackupAgent
-      attr_reader :filesystem
-
+    class Unsymlink
       def initialize(filesystem: FileUtils)
         @filesystem = filesystem
       end
 
       def execute(installation_bundle)
         installation_bundle.target_files.each do |target_file|
-          begin
-            filesystem.mv(target_file, "#{target_file}.bak", force: true)
-          rescue Errno::ENOENT
-          end
+          filesystem.rm target_file
         end
       end
+
+      private
+      attr_reader :filesystem
     end
   end
 end

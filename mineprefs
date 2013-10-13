@@ -21,8 +21,11 @@ installation_payload = MinePrefs::InstallationPayload.new(
 MinePrefs::Installation.new(
   installation_payload: installation_payload,
   install_commands: [
-    MinePrefs::Commands::BackupAgent.new,
-    MinePrefs::Commands::TargetFileRemover.new,
+    MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlinker.new
   ],
-).install
+  uninstall_commands: [
+    MinePrefs::Commands::Unsymlink.new,
+    MinePrefs::Commands::Backups::Restore.new
+  ]
+).send(ARGV.first)
