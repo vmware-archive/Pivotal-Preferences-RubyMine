@@ -4,9 +4,14 @@ module MinePrefs
       @filesystem = filesystem
     end
 
-    def execute(installation)
-      installation.files_to_install.each do |file_to_install|
-        filesystem.symlink(File.join(installation.source_location, file_to_install), File.join(installation.target, file_to_install))
+    def execute(installation_bundle)
+      installation_bundle.files_to_install.each do |file_to_install|
+        filesystem.symlink(
+          File.join(
+            installation_bundle.source_location, file_to_install
+          ),
+          File.join(installation_bundle.target, file_to_install)
+        )
       end
     end
 
