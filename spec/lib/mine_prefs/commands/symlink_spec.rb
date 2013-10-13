@@ -1,8 +1,8 @@
-require "mine_prefs/commands/symlinker"
+require "mine_prefs/commands/symlink"
 
 module MinePrefs
   module Commands
-    describe Symlinker do
+    describe Symlink do
       describe "#execute" do
         it "symlinks all files to install into the target" do
           installation = double :installation, installation_pairs: [
@@ -16,7 +16,7 @@ module MinePrefs
 
           filesystem.should_receive(:symlink).with("/source/foo/bar", "/baz/foo/bar")
 
-          Symlinker.new(filesystem: filesystem).execute(installation)
+          Symlink.new(filesystem: filesystem).execute(installation)
         end
       end
     end

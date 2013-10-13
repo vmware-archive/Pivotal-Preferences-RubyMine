@@ -1,6 +1,6 @@
 module MinePrefs
   module Commands
-    class Symlinker
+    class Symlink
       def initialize(filesystem: FileUtils)
         @filesystem = filesystem
       end

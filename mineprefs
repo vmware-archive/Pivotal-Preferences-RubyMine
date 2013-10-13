@@ -22,7 +22,7 @@ MinePrefs::Installation.new(
   installation_payload: installation_payload,
   install_commands: [
     MinePrefs::Commands::Backups::Backup.new,
-    MinePrefs::Commands::Symlinker.new
+    MinePrefs::Commands::Symlink.new
   ],
   uninstall_commands: [
     MinePrefs::Commands::Unsymlink.new,
