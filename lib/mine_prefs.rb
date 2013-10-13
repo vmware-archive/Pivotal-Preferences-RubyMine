@@ -1,7 +1,6 @@
 require "fileutils"
 require "mine_prefs/installation"
 require "mine_prefs/installation_payload"
-require "mine_prefs/commands/target_file_remover"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/unsymlink"
 require "mine_prefs/commands/backups/backup"
