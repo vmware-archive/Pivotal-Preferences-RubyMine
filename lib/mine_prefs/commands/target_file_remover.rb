@@ -8,9 +8,9 @@ module MinePrefs
       end
 
       def execute(installation_bundle)
-        installation_bundle.files_to_install.each do |file_to_install|
+        installation_bundle.target_files.each do |target_file|
           begin
-            filesystem.rm_rf(File.join(installation_bundle.target, file_to_install))
+            filesystem.rm_rf(target_file)
           rescue Errno::ENOENT
           end
         end

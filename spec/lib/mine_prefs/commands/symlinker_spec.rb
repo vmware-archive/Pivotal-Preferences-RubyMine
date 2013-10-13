@@ -5,7 +5,12 @@ module MinePrefs
     describe Symlinker do
       describe "#execute" do
         it "symlinks all files to install into the target" do
-          installation = double :installation, source_location: "/source", files_to_install: ["foo/bar"], target: "/baz"
+          installation = double :installation, installation_pairs: [
+            double(:installation_pair,
+              source: "/source/foo/bar",
+              target: "/baz/foo/bar"
+            )
+          ]
 
           filesystem = double :filesystem
 

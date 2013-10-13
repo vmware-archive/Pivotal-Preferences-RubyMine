@@ -8,8 +8,7 @@ module MinePrefs
       end
 
       def execute(installation_bundle)
-        installation_bundle.files_to_install.each do |file|
-          target_file = File.join(installation_bundle.target, file)
+        installation_bundle.target_files.each do |target_file|
           begin
             filesystem.mv(target_file, "#{target_file}.bak", force: true)
           rescue Errno::ENOENT
