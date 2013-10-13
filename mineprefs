@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift "./lib"
+
+require "mine_prefs/symlinker"
+require "mine_prefs/backup_agent"
+require "mine_prefs/installation"
+require "mine_prefs/installation_payload"
+require "fileutils"
+
+source  = File.dirname(File.expand_path(__FILE__))
+options = Dir[File.join(source, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
+target  = ENV['INSTALL_DIR'] || Dir[File.join("~", "Library", "Preferences", "RubyMine*")].last
+
+installation_payload = MinePrefs::InstallationPayload.new(
+  target: target,
+  source_location: source,
+  files_to_install: [
+    "keymaps",
+    "codestyles",
+    "preferences",
+    "templates",
+  ] + options,
+)
+
+MinePrefs::Installation.new(
+  installation_payload: installation_payload,
+  preparers: [MinePrefs::BackupAgent.new],
+  installers: [MinePrefs::Symlinker.new]
+).install
