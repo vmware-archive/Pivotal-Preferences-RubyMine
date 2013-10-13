@@ -2,12 +2,7 @@
 
 $LOAD_PATH.unshift "./lib"
 
-require "mine_prefs/symlinker"
-require "mine_prefs/backup_agent"
-require "mine_prefs/installation"
-require "mine_prefs/installation_payload"
-require "mine_prefs/target_file_remover"
-require "fileutils"
+require "mine_prefs"
 
 source  = File.join(File.dirname(File.expand_path(__FILE__)), "RubyMineXX")
 options = Dir[File.join(source, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
@@ -26,8 +21,8 @@ installation_payload = MinePrefs::InstallationPayload.new(
 MinePrefs::Installation.new(
   installation_payload: installation_payload,
   install_commands: [
-    MinePrefs::BackupAgent.new,
-    MinePrefs::TargetFileRemover.new,
-    MinePrefs::Symlinker.new
+    MinePrefs::Commands::BackupAgent.new,
+    MinePrefs::Commands::TargetFileRemover.new,
+    MinePrefs::Commands::Symlinker.new
   ],
 ).install
