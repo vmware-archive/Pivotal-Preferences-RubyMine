@@ -11,7 +11,7 @@ require "fileutils"
 
 source  = File.join(File.dirname(File.expand_path(__FILE__)), "RubyMineXX")
 options = Dir[File.join(source, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
-target  = ENV['INSTALL_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
+target  = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
 
 installation_payload = MinePrefs::InstallationPayload.new(
   target: target,

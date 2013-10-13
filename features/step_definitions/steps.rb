@@ -22,7 +22,7 @@ When(/^the Pivotal Preferences are not already installed$/) do
 end
 
 When(/^I run:$/) do |command|
-  system("INSTALL_DIR=tmp/RubyMine60 #{command}")
+  system("TARGET_DIR=tmp/RubyMine60 #{command}")
 end
 
 Then(/^the Pivotal Preferences should be installed and take effect when I start RubyMine$/) do
