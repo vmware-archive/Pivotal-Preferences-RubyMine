@@ -31,7 +31,7 @@
     <option name="RENAME_VARIABLES_INPLACE" value="true" />
     <option name="PRESELECT_RENAME" value="true" />
     <option name="REFRAIN_FROM_SCROLLING" value="false" />
-    <option name="SHOW_REFORMAT_DIALOG" value="true" />
+    <option name="SHOW_REFORMAT_DIALOG" value="false" />
     <option name="SHOW_OPIMIZE_IMPORTS_DIALOG" value="true" />
   </component>
 </application>
