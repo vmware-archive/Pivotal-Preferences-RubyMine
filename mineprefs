@@ -6,6 +6,7 @@ require "mine_prefs/symlinker"
 require "mine_prefs/backup_agent"
 require "mine_prefs/installation"
 require "mine_prefs/installation_payload"
+require "mine_prefs/target_file_remover"
 require "fileutils"
 
 source  = File.join(File.dirname(File.expand_path(__FILE__)), "RubyMineXX")
@@ -18,13 +19,12 @@ installation_payload = MinePrefs::InstallationPayload.new(
   files_to_install: [
     "keymaps",
     "codestyles",
-    "preferences",
     "templates",
   ] + options,
 )
 
 MinePrefs::Installation.new(
   installation_payload: installation_payload,
-  preparers: [MinePrefs::BackupAgent.new],
+  preparers: [MinePrefs::BackupAgent.new, MinePrefs::TargetFileRemover.new],
   installers: [MinePrefs::Symlinker.new]
 ).install
