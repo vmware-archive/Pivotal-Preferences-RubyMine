@@ -1,4 +1,4 @@
-require "mine_prefs/target_file_remover"
+require "mine_prefs/commands/target_file_remover"
 
 module MinePrefs
   module Commands

@@ -1,4 +1,4 @@
-require "mine_prefs/symlinker"
+require "mine_prefs/commands/symlinker"
 
 module MinePrefs
   module Commands
