@@ -6,7 +6,7 @@ Once upon a time, RubyMine shipped with keybindings that made no sense to anyone
 * Ruby Code Styles
 * Live Templates (ruby, jasmine)
 
-Today, this project is both a repository of Pivotal's preferences for RubyMine - it's also a recommended workflow for tracking your team's customizations to RubyMine preferences. 
+Today, this project is not only a repository of Pivotal's preferences for RubyMine - it's also a recommended workflow for tracking your team's customizations to RubyMine preferences. 
 
 ## Installation ##
 
