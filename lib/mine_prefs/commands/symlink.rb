@@ -6,7 +6,7 @@ module MinePrefs
       end
 
       def execute(installation_bundle)
-        installation_bundle.installation_pairs.each do |installation_pair|
+        installation_bundle.each do |installation_pair|
           filesystem.symlink(installation_pair.source, installation_pair.target)
         end
       end

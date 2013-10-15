@@ -12,13 +12,13 @@ module MinePrefs
       end
     end
 
-    describe "installation_pairs" do
+    describe "#each" do
       it "returns the source and destination files for installation" do
         installation_pair = InstallationPayload.new(
           target_location: "/target",
           source_location: "/source",
           files_to_install: ["/install_file"]
-        ).installation_pairs.first
+        ).first
 
         installation_pair.target.should == "/target/install_file"
         installation_pair.source.should == "/source/install_file"

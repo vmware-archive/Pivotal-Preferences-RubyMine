@@ -5,7 +5,7 @@ module MinePrefs
     describe Symlink do
       describe "#execute" do
         it "symlinks all files to install into the target" do
-          installation = double :installation, installation_pairs: [
+          installation_bundle = [
             double(:installation_pair,
               source: "/source/foo/bar",
               target: "/baz/foo/bar"
@@ -16,7 +16,7 @@ module MinePrefs
 
           filesystem.should_receive(:symlink).with("/source/foo/bar", "/baz/foo/bar")
 
-          Symlink.new(filesystem: filesystem).execute(installation)
+          Symlink.new(filesystem: filesystem).execute(installation_bundle)
         end
       end
     end
