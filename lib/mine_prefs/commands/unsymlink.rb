@@ -6,8 +6,8 @@ module MinePrefs
       end
 
       def execute(installation_bundle)
-        installation_bundle.target_files.each do |target_file|
-          filesystem.rm target_file
+        installation_bundle.each do |file|
+          filesystem.rm file.target
         end
       end
 

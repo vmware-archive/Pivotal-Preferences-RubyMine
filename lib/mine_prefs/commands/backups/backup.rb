@@ -9,9 +9,9 @@ module MinePrefs
         end
 
         def execute(installation_bundle)
-          installation_bundle.target_files.each do |target_file|
+          installation_bundle.each do |file|
             begin
-              filesystem.mv(target_file, MinePrefs::Commands::Backups::File.new(target_file).to_s, force: true)
+              filesystem.mv(file.target, MinePrefs::Commands::Backups::File.new(file.target).to_s, force: true)
             rescue Errno::ENOENT
             end
           end

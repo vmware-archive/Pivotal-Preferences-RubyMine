@@ -10,12 +10,6 @@ module MinePrefs
       @files_to_install = files_to_install
     end
 
-    def target_files
-      files_to_install.map do |file_to_install|
-        File.join(target_location, file_to_install)
-      end
-    end
-
     def each(&block)
       installation_pairs.each &block
     end

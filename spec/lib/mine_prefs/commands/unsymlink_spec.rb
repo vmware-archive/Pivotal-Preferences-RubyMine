@@ -5,7 +5,7 @@ module MinePrefs
     describe Unsymlink do
       describe "#execute" do
         it "removes the target files" do
-          installation_bundle = double :installation_bundle, target_files: ["/target/file"]
+          installation_bundle = [double(:file, target: "/target/file")]
           filesystem = double :filesystem
 
           filesystem.should_receive(:rm).with("/target/file")
