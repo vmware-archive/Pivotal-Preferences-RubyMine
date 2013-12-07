@@ -4,7 +4,7 @@ module MinePrefs
       class Backup
         attr_reader :filesystem
 
-        def initialize(filesystem: FileUtils)
+        def initialize(filesystem: LoggingFileUtils.new(FileUtils))
           @filesystem = filesystem
         end
 

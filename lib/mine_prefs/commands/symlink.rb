@@ -1,7 +1,7 @@
 module MinePrefs
   module Commands
     class Symlink
-      def initialize(filesystem: FileUtils)
+      def initialize(filesystem: LoggingFileUtils.new(FileUtils))
         @filesystem = filesystem
       end
 

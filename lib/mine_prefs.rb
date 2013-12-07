@@ -1,8 +1,8 @@
 require "fileutils"
 require "mine_prefs/installation"
 require "mine_prefs/installation_payload"
+require "mine_prefs/logging_file_utils"
 require "mine_prefs/commands/symlink"
-require "mine_prefs/commands/unsymlink"
 require "mine_prefs/commands/backups/backup"
 require "mine_prefs/commands/backups/file"
 
@@ -20,10 +20,14 @@ installation_payload = MinePrefs::InstallationPayload.new(
   ] + options,
 )
 
+feature = ARGV.first
+
 MinePrefs::Installation.new(
   installation_payload: installation_payload,
   install_commands: [
     MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlink.new
   ]
-).send(ARGV.first)
+).send(feature)
+
+puts "#{feature} complete!"
