@@ -8,11 +8,22 @@ module MinePrefs
           @filesystem = filesystem
         end
 
+        FILE_NOT_FOUND = Errno::ENOENT
+
         def execute(installation_bundle)
           installation_bundle.each do |file|
             begin
               filesystem.mv(file.target, MinePrefs::Commands::Backups::File.new(file.target).to_s, force: true)
-            rescue Errno::ENOENT
+            rescue FILE_NOT_FOUND
+            end
+          end
+        end
+
+        def undo(installation_bundle)
+          installation_bundle.each do |file|
+            begin
+              filesystem.mv(MinePrefs::Commands::Backups::File.new(file.target).to_s, file.target)
+            rescue FILE_NOT_FOUND
             end
           end
         end
