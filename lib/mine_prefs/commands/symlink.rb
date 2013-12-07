@@ -11,6 +11,12 @@ module MinePrefs
         end
       end
 
+      def undo(installation_bundle)
+        installation_bundle.each do |file|
+          filesystem.rm(file.target)
+        end
+      end
+
       private
       attr_reader :filesystem
     end

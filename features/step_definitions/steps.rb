@@ -34,5 +34,6 @@ When(/^the Pivotal Preferences are already installed$/) do
 end
 
 Then(/^the Pivotal Preferences should be uninstalled$/) do
-  Pathname.new(installed_path_to("codestyles")).realpath.should == Pathname.new(installed_path_to("codestyles"))
+  Pathname.new(installed_path_to("codestyles")).realpath.should ==
+    Pathname.new(installed_path_to("codestyles"))
 end
