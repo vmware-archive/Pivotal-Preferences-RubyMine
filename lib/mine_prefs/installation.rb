@@ -1,9 +1,10 @@
 module MinePrefs
   class Installation
-    attr_reader :install_commands, :installation_payload
+    attr_reader :install_commands, :uninstall_commands, :installation_payload
 
-    def initialize(install_commands: [], installation_payload: nil)
+    def initialize(install_commands: [], uninstall_commands: [], installation_payload: nil)
       @install_commands = install_commands
+      @uninstall_commands = uninstall_commands
       @installation_payload = installation_payload
     end
 
@@ -14,8 +15,8 @@ module MinePrefs
     end
 
     def uninstall
-      install_commands.reverse.each do |install_command|
-        install_command.undo installation_payload
+      uninstall_commands.each do |uninstall_command|
+        uninstall_command.execute installation_payload
       end
     end
   end

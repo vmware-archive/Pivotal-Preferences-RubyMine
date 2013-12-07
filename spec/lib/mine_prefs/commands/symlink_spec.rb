@@ -19,22 +19,6 @@ module MinePrefs
           Symlink.new(filesystem: filesystem).execute(installation_bundle)
         end
       end
-
-      describe "#undo" do
-        it "removes the symlinks" do
-          installation_bundle = [
-            double(:installation_pair,
-              target: "/baz/foo/bar"
-            )
-          ]
-
-          filesystem = double :filesystem
-
-          filesystem.should_receive(:rm).with("/baz/foo/bar")
-
-          Symlink.new(filesystem: filesystem).undo(installation_bundle)
-        end
-      end
     end
   end
 end

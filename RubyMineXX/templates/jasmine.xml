@@ -9,8 +9,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="jdesc" value="// DEPRECATED: you can now use 'desc&lt;TAB&gt;'&#10;describe(&quot;$A$&quot;, function () {&#10;  it(&quot;should $B$&quot;, function() {&#10;    $END$&#10;  });&#10;});" description="Jasmine describe block, with one it" toReformat="true" toShortenFQNames="true">
@@ -23,8 +23,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="jit" value="// DEPRECATED: you can now use 'it&lt;TAB&gt;'&#10;it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
@@ -36,8 +36,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="jwait" value="// DEPRECATED: you can now use 'wait&lt;TAB&gt;'&#10;waitsFor(1000, function() {&#10;  $END$&#10;}, &quot;$A$&quot;);&#10;&#10;" description="Jasmine waits block" toReformat="true" toShortenFQNames="true">
@@ -49,8 +49,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="jrun" value="// DEPRECATED: you can now use 'run&lt;TAB&gt;'&#10;runs(function() {&#10;  $END$&#10;});" description="Jasmine runs block" toReformat="true" toShortenFQNames="true">
@@ -61,8 +61,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="clog" value="console.error(&quot;=============&gt;&quot;, $A$);$END$" description="Conspicious console.error message" toReformat="true" toShortenFQNames="true">
@@ -74,8 +74,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="tlog" value="console.error(&quot;=============&gt; $c$.$m$ @$l$&quot;);&#10;$END$" description="" toReformat="true" toShortenFQNames="true">
@@ -89,8 +89,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="jbef" value="// DEPRECATED: you can now use 'bef&lt;TAB&gt;'&#10;beforeEach(function() {&#10;  $END$&#10;});" description="a Jasmine beforeEach block" toReformat="true" toShortenFQNames="true">
@@ -99,9 +99,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -111,9 +111,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -123,9 +123,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -135,9 +135,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -150,8 +150,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="it" value="it(&quot;should $B$&quot;, function() {&#10;  $END$&#10;});&#10;" description="Jasmine it block" toReformat="true" toShortenFQNames="true">
@@ -163,8 +163,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="run" value="runs(function() {&#10;  $END$&#10;});" description="Jasmine runs block" toReformat="true" toShortenFQNames="true">
@@ -175,8 +175,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
   <template name="wait" value="waitsFor(1000, function() {&#10;  $END$&#10;}, &quot;$A$&quot;);&#10;&#10;" description="Jasmine waits block" toReformat="true" toShortenFQNames="true">
@@ -188,8 +188,8 @@
       <option name="RHTML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
     </context>
   </template>
 </templateSet>

@@ -7,9 +7,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -22,9 +22,9 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="false" />
       <option name="RHTML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="true" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
