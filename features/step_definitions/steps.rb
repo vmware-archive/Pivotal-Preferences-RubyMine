@@ -26,7 +26,8 @@ When(/^I run:$/) do |command|
 end
 
 Then(/^the Pivotal Preferences should be installed and take effect when I start RubyMine$/) do
-  Pathname.new(installed_path_to("codestyles")).realpath.should == Pathname.new(repo_path_to("codestyles"))
+  Pathname.new(installed_path_to("codestyles")).realpath.should ==
+    Pathname.new(repo_path_to("codestyles"))
 end
 
 When(/^the Pivotal Preferences are already installed$/) do
