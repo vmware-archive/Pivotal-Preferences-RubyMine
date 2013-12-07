@@ -4,7 +4,7 @@ module MinePrefs
       class Backup
         attr_reader :filesystem
 
-        def initialize(filesystem: LoggingFileUtils.new(FileUtils))
+        def initialize(filesystem: LoggingFileUtils.new(MinePrefs::FileUtils.new))
           @filesystem = filesystem
         end
 
@@ -12,19 +12,19 @@ module MinePrefs
 
         def execute(installation_bundle)
           installation_bundle.each do |file|
-            begin
-              filesystem.mv(file.target, MinePrefs::Commands::Backups::File.new(file.target).to_s, force: true)
-            rescue FILE_NOT_FOUND
-            end
+            source = file.target
+            destination = MinePrefs::Commands::Backups::File.new(source).to_s
+
+            filesystem.mv(source, destination)
           end
         end
 
         def undo(installation_bundle)
           installation_bundle.each do |file|
-            begin
-              filesystem.mv(MinePrefs::Commands::Backups::File.new(file.target).to_s, file.target)
-            rescue FILE_NOT_FOUND
-            end
+            destination = file.target
+            source = MinePrefs::Commands::Backups::File.new(destination).to_s
+
+            filesystem.mv(source, destination)
           end
         end
       end

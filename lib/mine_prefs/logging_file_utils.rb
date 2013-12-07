@@ -16,9 +16,9 @@ module MinePrefs
       file_utils.rm file
     end
 
-    def mv(source, target, options={})
+    def mv(source, target)
       puts "Moving #{source} to #{target}"
-      file_utils.mv source, target, options
+      file_utils.mv source, target
     end
   end
 end
