@@ -8,17 +8,15 @@ require "mine_prefs/commands/backups/backup"
 require "mine_prefs/commands/backups/file"
 
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
-options           = Dir[File.join(source_location, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
+
+files_to_install  = Dir[File.join(source_location, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
+directories_to_install = ["keymaps", "codestyles", "templates"]
 
 installation_payload = MinePrefs::InstallationPayload.new(
   target_location: target_location,
   source_location: source_location,
-  files_to_install: [
-    "keymaps",
-    "codestyles",
-    "templates",
-  ] + options,
+  files_to_install:  directories_to_install + files_to_install,
 )
 
 feature = ARGV.first
