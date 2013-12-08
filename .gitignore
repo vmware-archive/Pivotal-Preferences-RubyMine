@@ -2,3 +2,5 @@
 tmp/RubyMine60
 .DS_Store
 *.swp
+.ruby-version
+.ruby-gemset
