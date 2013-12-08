@@ -10,6 +10,11 @@ module MinePrefs
           filesystem.should_receive(:mv).with("source", "target", force: true)
           FileUtils.new(filesystem).mv("source", "target")
         end
+
+        it "should convert arguments to strings" do
+          filesystem.should_receive(:mv).with('source', 'target', force: true)
+          FileUtils.new(filesystem).mv(:source, :target)
+        end
       end
 
       context "source file does not exist" do

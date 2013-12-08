@@ -10,7 +10,10 @@ module MinePrefs
             installation_bundle = [double(:file, target: "/target/file")]
             filesystem = double :filesystem
 
-            filesystem.should_receive(:mv).with("/target/file.bak", "/target/file")
+            filesystem.should_receive(:mv) do |backup_file_name, target_file_name|
+              backup_file_name.should == "/target/file.bak"
+              target_file_name.should == "/target/file"
+            end
 
             Backup.new(filesystem: filesystem).undo(installation_bundle)
           end
@@ -22,7 +25,10 @@ module MinePrefs
 
             filesystem = double :filesystem
 
-            filesystem.should_receive(:mv).with("/bar/foo", "/bar/foo.bak")
+            filesystem.should_receive(:mv) do |target_file_name, backup_file_name|
+              target_file_name.should == "/bar/foo"
+              backup_file_name.should == "/bar/foo.bak"
+            end
 
             Backup.new(filesystem: filesystem).execute(installation)
           end

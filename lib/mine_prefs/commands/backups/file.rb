@@ -10,6 +10,10 @@ module MinePrefs
           "#{path}.bak"
         end
 
+        def ==(string)
+          to_s == string
+        end
+
         private
         attr_reader :path
       end

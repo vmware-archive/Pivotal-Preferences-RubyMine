@@ -13,7 +13,7 @@ module MinePrefs
 
     def mv(source, target)
       begin
-        file_utils.mv source, target, force: true
+        file_utils.mv source.to_s, target.to_s, force: true
       rescue SOURCE_FILE_NOT_FOUND
       end
     end
