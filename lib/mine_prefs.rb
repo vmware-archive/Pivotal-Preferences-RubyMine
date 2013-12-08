@@ -5,7 +5,7 @@ require "mine_prefs/logging_file_utils"
 require "mine_prefs/file_utils"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/backups/backup"
-require "mine_prefs/commands/backups/file"
+require "mine_prefs/commands/backups/backup_pathname"
 
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last

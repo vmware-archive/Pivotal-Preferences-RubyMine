@@ -11,7 +11,7 @@ module MinePrefs
         def execute(installation_bundle)
           installation_bundle.each do |file|
             source = file.target
-            destination = MinePrefs::Commands::Backups::File.new(source)
+            destination = MinePrefs::Commands::Backups::BackupPathname.new(source)
 
             filesystem.mv(source, destination)
           end
@@ -20,7 +20,7 @@ module MinePrefs
         def undo(installation_bundle)
           installation_bundle.each do |file|
             destination = file.target
-            source = MinePrefs::Commands::Backups::File.new(destination)
+            source = MinePrefs::Commands::Backups::BackupPathname.new(destination)
 
             filesystem.mv(source, destination)
           end

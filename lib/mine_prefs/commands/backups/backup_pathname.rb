@@ -1,7 +1,7 @@
 module MinePrefs
   module Commands
     module Backups
-      class File
+      class BackupPathname
         def initialize(path)
           @path = path
         end

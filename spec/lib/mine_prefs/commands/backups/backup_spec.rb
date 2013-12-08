@@ -1,5 +1,5 @@
 require "mine_prefs/commands/backups/backup"
-require "mine_prefs/commands/backups/file"
+require "mine_prefs/commands/backups/backup_pathname"
 
 module MinePrefs
   module Commands
