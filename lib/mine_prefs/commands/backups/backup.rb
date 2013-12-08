@@ -8,8 +8,6 @@ module MinePrefs
           @filesystem = filesystem
         end
 
-        FILE_NOT_FOUND = Errno::ENOENT
-
         def execute(installation_bundle)
           installation_bundle.each do |file|
             source = file.target
