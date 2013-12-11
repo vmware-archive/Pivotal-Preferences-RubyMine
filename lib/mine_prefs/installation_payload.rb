@@ -11,20 +11,20 @@ module MinePrefs
     end
 
     def each(&block)
-      installation_pairs.each &block
+      installable_files.each &block
     end
 
     private
-    def installation_pairs
+    def installable_files
       files_to_install.map do |file_to_install|
-        InstallationPair.new(
+        InstallableFile.new(
           source: File.join(source_location, file_to_install),
           target: File.join(target_location, file_to_install),
         )
       end
     end
 
-    class InstallationPair
+    class InstallableFile
       attr_reader :source, :target
 
       def initialize(source: nil, target: nil)
