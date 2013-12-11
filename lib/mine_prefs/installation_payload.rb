@@ -18,8 +18,8 @@ module MinePrefs
     def installable_files
       files_to_install.map do |file_to_install|
         InstallableFile.new(
-          source: File.join(source_location, file_to_install),
-          target: File.join(target_location, file_to_install),
+          source: File.expand_path(File.join(source_location, file_to_install)),
+          target: File.expand_path(File.join(target_location, file_to_install)),
         )
       end
     end
