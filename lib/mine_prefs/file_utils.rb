@@ -1,12 +1,9 @@
-require "delegate"
-
 module MinePrefs
-  class FileUtils < SimpleDelegator
+  class FileUtils
     attr_reader :file_utils
 
     def initialize(file_utils=::FileUtils)
       @file_utils = file_utils
-      super
     end
 
     SOURCE_FILE_NOT_FOUND = Errno::ENOENT
