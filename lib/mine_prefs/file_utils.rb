@@ -17,5 +17,13 @@ module MinePrefs
       rescue SOURCE_FILE_NOT_FOUND
       end
     end
+
+    def symlink(source, target)
+      file_utils.symlink source, target
+    end
+
+    def rm(path)
+      file_utils.rm path
+    end
   end
 end

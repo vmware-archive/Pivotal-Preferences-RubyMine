@@ -1,11 +1,18 @@
 require "fileutils"
+require "logger"
 require "mine_prefs/installation"
 require "mine_prefs/installation_payload"
-require "mine_prefs/logging_file_utils"
 require "mine_prefs/file_utils"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/backups/backup"
 require "mine_prefs/commands/backups/backup_pathname"
+require "mine_prefs/method_hook"
+require "mine_prefs/logging/symlink"
+require "mine_prefs/logging/backup"
+require "mine_prefs/logging/file_utils"
+
+$logger = Logger.new(STDOUT)
+$logger.level = Logger::DEBUG
 
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
@@ -29,4 +36,4 @@ MinePrefs::Installation.new(
   ]
 ).send(feature)
 
-puts "#{feature} complete!"
+$logger.info "#{feature} complete!"
