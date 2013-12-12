@@ -10,9 +10,28 @@ require "mine_prefs/method_hook"
 require "mine_prefs/logging/symlink"
 require "mine_prefs/logging/backup"
 require "mine_prefs/logging/file_utils"
+require "optparse"
+
+options = {log_level: Logger::INFO}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: mineprefs [options] (install|uninstall)"
+
+  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+    if v
+      options[:log_level] = Logger::DEBUG
+    else
+      options[:log_level] = Logger::INFO
+    end
+  end
+
+  opts.on("-s", "--silent", "Output nothing") do |s|
+    options[:log_level] = Logger::UNKNOWN
+  end
+end.parse!
 
 $logger = Logger.new(STDOUT)
-$logger.level = Logger::DEBUG
+$logger.level = options[:log_level]
 
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
