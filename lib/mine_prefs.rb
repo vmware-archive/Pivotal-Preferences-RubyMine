@@ -31,7 +31,11 @@ OptionParser.new do |opts|
 end.parse!
 
 $logger = Logger.new(STDOUT)
+$logger.progname = "mineprefs"
 $logger.level = options[:log_level]
+$logger.formatter = proc do |severity, datetime, progname, msg|
+  "#{datetime}: #{severity} - #{msg}\n"
+end
 
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
