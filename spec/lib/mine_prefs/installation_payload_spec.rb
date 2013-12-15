@@ -7,7 +7,7 @@ module MinePrefs
         installation_pair = InstallationPayload.new(
           target_location: "/target",
           source_location: "/source",
-          files_to_install: ["/install_file"]
+          files_or_directories_to_install: ["/install_file"]
         ).first
 
         installation_pair.target.should == "/target/install_file"

@@ -46,7 +46,7 @@ directories_to_install = ["keymaps", "codestyles", "templates"]
 installation_payload = MinePrefs::InstallationPayload.new(
   target_location: target_location,
   source_location: source_location,
-  files_to_install:  directories_to_install + files_to_install,
+  files_or_directories_to_install:  directories_to_install + files_to_install,
 )
 
 feature = ARGV.first
