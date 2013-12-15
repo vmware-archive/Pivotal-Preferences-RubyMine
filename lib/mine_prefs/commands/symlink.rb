@@ -5,15 +5,15 @@ module MinePrefs
         @filesystem = filesystem
       end
 
-      def execute(installation_bundle)
-        installation_bundle.each do |installation_pair|
-          filesystem.symlink(installation_pair.source, installation_pair.target)
+      def execute(files_to_install)
+        files_to_install.each do |installable_file|
+          filesystem.symlink(installable_file.source, installable_file.target)
         end
       end
 
-      def undo(installation_bundle)
-        installation_bundle.each do |file|
-          filesystem.rm(file.target)
+      def undo(files_to_install)
+        files_to_install.each do |installable_file|
+          filesystem.rm(installable_file.target)
         end
       end
 
