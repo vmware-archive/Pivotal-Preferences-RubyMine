@@ -10,6 +10,7 @@ require "mine_prefs/method_hook"
 require "mine_prefs/logging/symlink"
 require "mine_prefs/logging/backup"
 require "mine_prefs/logging/file_utils"
+require "mine_prefs/logging/installation"
 require "optparse"
 
 options = {log_level: Logger::INFO}
@@ -54,5 +55,3 @@ MinePrefs::Installation.new(
     MinePrefs::Commands::Symlink.new
   ]
 ).send(feature)
-
-$logger.info "#{feature} complete!"
