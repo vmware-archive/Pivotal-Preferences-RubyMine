@@ -37,16 +37,12 @@ $logger.formatter = proc do |severity, datetime, progname, msg|
   "#{datetime}: #{severity} - #{msg}\n"
 end
 
-source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
-target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
-
-files  = Dir[File.join(source_location, "options", "**", "*")]
-directories = ["keymaps", "codestyles", "templates"]
-
 files_to_install = MinePrefs::FilesToInstall.new(
-  target_location: target_location,
-  source_location: source_location,
-  files_or_directories_to_install:  directories + files,
+  target_location: (ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last),
+  source_location: File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"),
+  files_or_directories_to_install:
+    ["keymaps", "codestyles", "templates"] +
+    Dir[File.join(File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"), "options", "**", "*")],
 )
 
 feature = ARGV.first
