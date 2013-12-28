@@ -17,9 +17,11 @@ module MinePrefs
     private
     def installable_files
       files_or_directories_to_install.map do |file_to_install|
+        file_to_install_relative_path_to_source = file_to_install.gsub(source_location, '')
+
         InstallableFile.new(
-          source: File.expand_path(File.join(source_location, file_to_install)),
-          target: File.expand_path(File.join(target_location, file_to_install)),
+          source: File.expand_path(File.join(source_location, file_to_install_relative_path_to_source)),
+          target: File.expand_path(File.join(target_location, file_to_install_relative_path_to_source)),
         )
       end
     end

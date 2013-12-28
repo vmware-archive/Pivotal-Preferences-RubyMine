@@ -40,13 +40,13 @@ end
 source_location   = File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX")
 target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
 
-files_to_install  = Dir[File.join(source_location, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
-directories_to_install = ["keymaps", "codestyles", "templates"]
+files  = Dir[File.join(source_location, "options", "**", "*")]
+directories = ["keymaps", "codestyles", "templates"]
 
 files_to_install = MinePrefs::FilesToInstall.new(
   target_location: target_location,
   source_location: source_location,
-  files_or_directories_to_install:  directories_to_install + files_to_install,
+  files_or_directories_to_install:  directories + files,
 )
 
 feature = ARGV.first
