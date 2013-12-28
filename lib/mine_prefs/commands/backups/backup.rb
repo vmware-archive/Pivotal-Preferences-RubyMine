@@ -8,8 +8,8 @@ module MinePrefs
           @filesystem = filesystem
         end
 
-        def execute(installation_bundle)
-          installation_bundle.each do |file|
+        def execute(files_to_install)
+          files_to_install.each do |file|
             source = file.target
             destination = MinePrefs::Commands::Backups::BackupPathname.new(source)
 
@@ -17,8 +17,8 @@ module MinePrefs
           end
         end
 
-        def undo(installation_bundle)
-          installation_bundle.each do |file|
+        def undo(files_to_install)
+          files_to_install.each do |file|
             destination = file.target
             source = MinePrefs::Commands::Backups::BackupPathname.new(destination)
 

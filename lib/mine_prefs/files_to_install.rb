@@ -1,5 +1,5 @@
 module MinePrefs
-  class InstallationPayload
+  class FilesToInstall
     include Enumerable
 
     attr_reader :target_location, :source_location, :files_or_directories_to_install

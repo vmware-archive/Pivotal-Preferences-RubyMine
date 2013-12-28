@@ -1,7 +1,7 @@
 require "fileutils"
 require "logger"
 require "mine_prefs/installation"
-require "mine_prefs/installation_payload"
+require "mine_prefs/files_to_install"
 require "mine_prefs/file_utils"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/backups/backup"
@@ -43,7 +43,7 @@ target_location   = ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Li
 files_to_install  = Dir[File.join(source_location, "options", "**", "*")].map { |file| file.gsub %r{.*/(options.*)}, '\1' }
 directories_to_install = ["keymaps", "codestyles", "templates"]
 
-installation_payload = MinePrefs::InstallationPayload.new(
+files_to_install = MinePrefs::FilesToInstall.new(
   target_location: target_location,
   source_location: source_location,
   files_or_directories_to_install:  directories_to_install + files_to_install,
@@ -52,7 +52,7 @@ installation_payload = MinePrefs::InstallationPayload.new(
 feature = ARGV.first
 
 MinePrefs::Installation.new(
-  installation_payload: installation_payload,
+  files_to_install: files_to_install,
   install_commands: [
     MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlink.new
