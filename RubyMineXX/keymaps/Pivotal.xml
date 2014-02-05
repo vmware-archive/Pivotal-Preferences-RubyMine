@@ -110,6 +110,7 @@
     <keyboard-shortcut first-keystroke="meta Y" />
     <keyboard-shortcut first-keystroke="shift control K" />
     <keyboard-shortcut first-keystroke="control Y" />
+    <keyboard-shortcut first-keystroke="meta BACK_SPACE" />
   </action>
   <action id="EditorIndentSelection">
     <keyboard-shortcut first-keystroke="TAB" />
