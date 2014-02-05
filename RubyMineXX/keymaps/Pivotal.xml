@@ -305,9 +305,11 @@
   </action>
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
+    <keyboard-shortcut first-keystroke="control meta H" />
   </action>
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="shift control meta alt UP" />
+    <keyboard-shortcut first-keystroke="control meta V" />
   </action>
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="alt F9" />
