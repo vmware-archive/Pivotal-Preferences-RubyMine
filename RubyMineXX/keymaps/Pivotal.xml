@@ -252,6 +252,7 @@
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="control TAB" />
     <keyboard-shortcut first-keystroke="control meta alt TAB" />
+    <keyboard-shortcut first-keystroke="alt TAB" />
   </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta CLOSE_BRACKET" />
@@ -270,6 +271,7 @@
   <action id="PrevSplitter">
     <keyboard-shortcut first-keystroke="shift control TAB" />
     <keyboard-shortcut first-keystroke="shift control meta alt TAB" />
+    <keyboard-shortcut first-keystroke="shift alt TAB" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta OPEN_BRACKET" />
