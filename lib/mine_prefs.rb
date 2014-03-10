@@ -46,7 +46,7 @@ files_to_install = MinePrefs::FilesToInstall.new(
     Dir[File.join(File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"), "options", "**", "*")],
 )
 
-feature = ARGV.first
+feature = ARGV.first || 'install'
 
 MinePrefs::Installation.new(
   files_to_install: files_to_install,

@@ -17,7 +17,7 @@ Then, run the following commands:
 ```sh
 git clone http://github.com/pivotal/Pivotal-Preferences-RubyMine.git
 cd Pivotal-Preferences-RubyMine
-./mineprefs install
+./mineprefs
 ```
 
 This will install the preferences into your *latest* version of RubyMine found in your ~/Library/Preferences folder. 
