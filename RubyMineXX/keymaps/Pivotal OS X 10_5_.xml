@@ -6,6 +6,9 @@
   <action id="Macro.run whole test file">
     <keyboard-shortcut first-keystroke="control meta alt R" />
   </action>
+  <action id="MoveEditorToOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="control meta M" />
+  </action>
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift control S" />
   </action>
