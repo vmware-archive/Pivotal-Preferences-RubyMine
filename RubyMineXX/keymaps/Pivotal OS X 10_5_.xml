@@ -6,5 +6,11 @@
   <action id="Macro.run whole test file">
     <keyboard-shortcut first-keystroke="control meta alt R" />
   </action>
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift control S" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="control S" />
+  </action>
 </keymap>
 
