@@ -7,13 +7,14 @@
     <keyboard-shortcut first-keystroke="control meta alt R" />
   </action>
   <action id="MoveEditorToOppositeTabGroup">
-    <keyboard-shortcut first-keystroke="control meta M" />
+    <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
+    <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
   </action>
   <action id="SplitHorizontally">
-    <keyboard-shortcut first-keystroke="shift control S" />
+    <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
   </action>
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="control S" />
+    <keyboard-shortcut first-keystroke="shift control meta alt UP" />
   </action>
 </keymap>
 
