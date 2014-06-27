@@ -3,6 +3,7 @@ require "logger"
 require "mine_prefs/installation"
 require "mine_prefs/files_to_install"
 require "mine_prefs/file_utils"
+require "mine_prefs/commands/create_directories"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/backups/backup"
 require "mine_prefs/commands/backups/backup_pathname"
@@ -51,6 +52,7 @@ feature = ARGV.first || 'install'
 MinePrefs::Installation.new(
   files_to_install: files_to_install,
   install_commands: [
+    MinePrefs::Commands::CreateDirectories.new,
     MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlink.new
   ]
