@@ -40,8 +40,12 @@ $logger.formatter = proc do |severity, datetime, progname, msg|
   "#{datetime}: #{severity} - #{msg}\n"
 end
 
+existing_target_directory = Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
+
+fallback_target_directory = File.expand_path(File.join("~", "Library", "Preferences", "RubyMine60"))
+
 files_to_install = MinePrefs::FilesToInstall.new(
-  target_location: (ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last),
+  target_location: ENV['TARGET_DIR'] || existing_target_directory || fallback_target_directory,
   source_location: File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"),
   files_or_directories_to_install:
     ["keymaps", "codestyles", "templates"] +
