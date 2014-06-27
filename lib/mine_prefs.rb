@@ -3,12 +3,14 @@ require "logger"
 require "mine_prefs/installation"
 require "mine_prefs/files_to_install"
 require "mine_prefs/file_utils"
+require "mine_prefs/commands/create_directories"
 require "mine_prefs/commands/symlink"
 require "mine_prefs/commands/backups/backup"
 require "mine_prefs/commands/backups/backup_pathname"
 require "mine_prefs/method_hook"
 require "mine_prefs/logging/symlink"
 require "mine_prefs/logging/backup"
+require "mine_prefs/logging/create_directories"
 require "mine_prefs/logging/file_utils"
 require "mine_prefs/logging/installation"
 require "optparse"
@@ -38,8 +40,12 @@ $logger.formatter = proc do |severity, datetime, progname, msg|
   "#{datetime}: #{severity} - #{msg}\n"
 end
 
+existing_target_directory = Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last
+
+fallback_target_directory = File.expand_path(File.join("~", "Library", "Preferences", "RubyMine60"))
+
 files_to_install = MinePrefs::FilesToInstall.new(
-  target_location: (ENV['TARGET_DIR'] || Dir[File.expand_path(File.join("~", "Library", "Preferences", "RubyMine*"))].last),
+  target_location: ENV['TARGET_DIR'] || existing_target_directory || fallback_target_directory,
   source_location: File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"),
   files_or_directories_to_install:
     ["keymaps", "codestyles", "templates"] +
@@ -51,6 +57,7 @@ feature = ARGV.first || 'install'
 MinePrefs::Installation.new(
   files_to_install: files_to_install,
   install_commands: [
+    MinePrefs::Commands::CreateDirectories.new,
     MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlink.new
   ]
