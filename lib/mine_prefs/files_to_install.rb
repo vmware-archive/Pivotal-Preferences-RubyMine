@@ -14,25 +14,61 @@ module MinePrefs
       installable_files.each &block
     end
 
+    def directories_assumed_to_exist_in_target
+      map(&:directories_assumed_to_exist_in_target).flatten.compact
+    end
+
     private
     def installable_files
       files_or_directories_to_install.map do |file_to_install|
         file_to_install_relative_path_to_source = file_to_install.gsub(source_location, '')
 
         InstallableFile.new(
-          source: File.expand_path(File.join(source_location, file_to_install_relative_path_to_source)),
-          target: File.expand_path(File.join(target_location, file_to_install_relative_path_to_source)),
+          source_location: source_location,
+          target_location: target_location,
+          file_path: file_to_install_relative_path_to_source,
         )
       end
     end
 
     class InstallableFile
-      attr_reader :source, :target
-
-      def initialize(source: nil, target: nil)
-        @source = source
-        @target = target
+      def initialize(
+        source_location: nil, 
+        target_location: nil,
+        file_path: nil
+      )
+        @source_location = source_location
+        @target_location = target_location
+        @file_path       = file_path
       end
+
+      def source
+        File.join(source_location, file_path)
+      end
+
+      def target
+        File.join(target_location, file_path)
+      end
+
+      def directories_assumed_to_exist_in_target
+        exploded_directory_path = file_path.split("/")
+        exploded_directory_path.pop
+
+        assumed_dirs = [target_location]
+
+        exploded_directory_path.each do |path_segment|
+          assumed_dirs << File.join(assumed_dirs.last.to_s, path_segment)
+        end
+
+        assumed_dirs
+      end
+
+      private
+      attr_reader(
+        :target_location,
+        :source_location,
+        :file_path,
+      )
     end
   end
 end

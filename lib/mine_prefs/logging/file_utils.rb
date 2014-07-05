@@ -22,6 +22,14 @@ MinePrefs::MethodHook.new(
 
 MinePrefs::MethodHook.new(
   klass: MinePrefs::FileUtils,
+  method_name: :rmdir,
+  before: ->(path) do
+    $logger.debug "Removing dir if empty: #{path}"
+  end
+)
+
+MinePrefs::MethodHook.new(
+  klass: MinePrefs::FileUtils,
   method_name: :rm,
   before: ->(path) do
     $logger.debug "Removing #{path}"

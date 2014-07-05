@@ -3,22 +3,53 @@ require "mine_prefs/commands/create_directories"
 module MinePrefs
   module Commands
     describe CreateDirectories do
-      describe "#execute" do
-        it "creates an options directory along with subsequent parent directories" do
-          installation_bundle = double(:collection_of_files_to_install,
-                                       target_location: "/baz/foo/bar")
-
-          filesystem = double :filesystem
-
-          filesystem.should_receive(:mkdir_p).with("/baz/foo/bar/options")
-
-          CreateDirectories.new(filesystem: filesystem).execute(installation_bundle)
+      context "the installation bundle assumes directories already exist in the target" do
+        before do
+          installation_bundle.stub(:directories_assumed_to_exist_in_target) do
+            [assumed_dir]
+          end
         end
-      end
 
-      describe "#undo" do
-        it "does nothing" do
-          CreateDirectories.new.undo
+        describe "#execute" do
+          it "creates directories assumed to exist in the target" do
+            command = CreateDirectories.new(filesystem: spy_filesystem)
+
+            command.execute(installation_bundle)
+
+            expect(spy_filesystem).to have_created_directory(assumed_dir)
+          end
+        end
+
+        describe "#undo" do
+          it "removes empty directories that were assumed to exist in the target" do
+            command = CreateDirectories.new(filesystem: spy_filesystem)
+
+            command.undo(installation_bundle)
+
+            expect(spy_filesystem).to have_removed_directory(assumed_dir)
+          end
+        end
+
+        let(:spy_filesystem) { SpyFilesystem.new }
+        let(:installation_bundle) { double(:installation_bundle) }
+        let(:assumed_dir) { "/some/dir" }
+
+        class SpyFilesystem
+          def mkdir_p(dir)
+            @made_directory = dir
+          end
+
+          def has_created_directory?(dir)
+            @made_directory == dir
+          end
+
+          def rmdir(dir)
+            @removed_dir = dir
+          end
+
+          def has_removed_directory?(dir)
+            @removed_dir == dir
+          end
         end
       end
     end

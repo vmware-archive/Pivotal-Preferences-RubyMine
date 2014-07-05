@@ -61,4 +61,4 @@ MinePrefs::Installation.new(
     MinePrefs::Commands::Backups::Backup.new,
     MinePrefs::Commands::Symlink.new
   ]
-).send(feature)
+).public_send(feature)

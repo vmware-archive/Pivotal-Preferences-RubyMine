@@ -26,5 +26,9 @@ module MinePrefs
     def mkdir_p(path)
       file_utils.mkdir_p path
     end
+
+    def rmdir(path)
+      file_utils.rmdir path
+    end
   end
 end

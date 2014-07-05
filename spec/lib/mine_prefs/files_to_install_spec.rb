@@ -2,14 +2,6 @@ require "mine_prefs/files_to_install"
 
 module MinePrefs
   describe FilesToInstall do
-    subject(:file_to_install) do
-      FilesToInstall.new(
-        target_location: "/target",
-        source_location: "/source",
-        files_or_directories_to_install: [file]
-      ).first
-    end
-
     context "files or directories to install are relative to source" do
       let(:file) { "install_file" }
 
@@ -33,5 +25,25 @@ module MinePrefs
         file_to_install.source.should == "/source/install_file"
       end
     end
+
+    context "given a file to install deep within the target" do
+      let(:file) { "some_dir/some_other_dir/some_file" }
+
+      it "returns directories in the order they should be created" do
+        expect(files_to_install.directories_assumed_to_exist_in_target).to eq(
+          ["/target", "/target/some_dir", "/target/some_dir/some_other_dir"]
+        )
+      end
+    end
+
+    let(:files_to_install) do
+      FilesToInstall.new(
+        target_location: "/target",
+        source_location: "/source",
+        files_or_directories_to_install: [file]
+      )
+    end
+
+    let(:file_to_install) { files_to_install.first }
   end
 end
