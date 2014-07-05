@@ -1,3 +1,5 @@
+require "mine_prefs/method_hook"
+
 MinePrefs::MethodHook.new(
   klass: MinePrefs::Commands::CreateDirectories,
   method_name: :execute,

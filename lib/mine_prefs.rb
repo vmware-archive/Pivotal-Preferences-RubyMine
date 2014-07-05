@@ -1,19 +1,13 @@
 require "fileutils"
 require "logger"
-require "mine_prefs/installation"
-require "mine_prefs/files_to_install"
-require "mine_prefs/file_utils"
-require "mine_prefs/commands/create_directories"
-require "mine_prefs/commands/symlink"
-require "mine_prefs/commands/backups/backup"
-require "mine_prefs/commands/backups/backup_pathname"
-require "mine_prefs/method_hook"
-require "mine_prefs/logging/symlink"
-require "mine_prefs/logging/backup"
-require "mine_prefs/logging/create_directories"
-require "mine_prefs/logging/file_utils"
-require "mine_prefs/logging/installation"
 require "optparse"
+
+module MinePrefs
+end
+
+Dir[File.join(__dir__, "mine_prefs", "**", "*.rb")].each do |file|
+  require file
+end
 
 options = {log_level: Logger::INFO}
 

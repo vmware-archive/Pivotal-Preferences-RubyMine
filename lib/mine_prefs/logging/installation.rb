@@ -1,3 +1,5 @@
+require "mine_prefs/method_hook"
+
 MinePrefs::MethodHook.new(
   klass: MinePrefs::Installation,
   method_name: :install,

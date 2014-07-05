@@ -1,3 +1,5 @@
+require "mine_prefs/method_hook"
+
 MinePrefs::MethodHook.new(
   klass: MinePrefs::Commands::Backups::Backup,
   method_name: :execute,
