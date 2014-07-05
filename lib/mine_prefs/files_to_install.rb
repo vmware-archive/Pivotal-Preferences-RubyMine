@@ -31,6 +31,10 @@ module MinePrefs
       end
     end
 
+    def source_location
+      File.join(@source_location, "/")
+    end
+
     class InstallableFile
       def initialize(
         source_location: nil, 
