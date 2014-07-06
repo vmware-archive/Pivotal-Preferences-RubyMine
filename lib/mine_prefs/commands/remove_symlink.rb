@@ -1,18 +1,12 @@
 module MinePrefs
   module Commands
-    class Symlink
+    class RemoveSymlink
       def initialize(filesystem: MinePrefs::FileUtils.new, files_to_install: files_to_install)
         @filesystem = filesystem
         @files_to_install = files_to_install
       end
 
       def execute
-        files_to_install.each do |installable_file|
-          filesystem.symlink(installable_file.source, installable_file.target)
-        end
-      end
-
-      def undo
         files_to_install.each do |installable_file|
           filesystem.rm(installable_file.target)
         end

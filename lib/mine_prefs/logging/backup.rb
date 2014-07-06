@@ -9,8 +9,8 @@ MinePrefs::MethodHook.new(
 )
 
 MinePrefs::MethodHook.new(
-  klass: MinePrefs::Commands::Backup,
-  method_name: :undo,
+  klass: MinePrefs::Commands::Restore,
+  method_name: :execute,
   before: ->(*args) do
     $logger.info "Restoring RubyMine preference files from backup"
   end

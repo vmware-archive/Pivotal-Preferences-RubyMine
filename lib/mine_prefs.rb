@@ -46,13 +46,16 @@ files_to_install = MinePrefs::FilesToInstall.new(
     Dir[File.join(File.join(File.dirname(File.expand_path(__FILE__)), "..", "RubyMineXX"), "options", "**", "*")],
 )
 
-feature = ARGV.first || 'install'
+case ARGV.first
+  when "install"
+    command = MinePrefs::Commands::Install(preferences: files_to_install)
+  when "uninstall"
+    command = MinePrefs::Commands::Uninstall(preferences: files_to_install)
+  else
+    raise "Unknown Command"
+end
 
-MinePrefs::Installation.new(
-  files_to_install: files_to_install,
-  install_commands: [
-    MinePrefs::Commands::CreateDirectories.new,
-    MinePrefs::Commands::Backup.new,
-    MinePrefs::Commands::Symlink.new
-  ]
-).public_send(feature)
+MinePrefs::Execute(
+  command: command,
+  observer: self,
+)

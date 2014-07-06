@@ -2,7 +2,7 @@ require "mine_prefs/values/backup_pathname"
 
 module MinePrefs
   module Commands
-    class Backup
+    class Restore
       def initialize(filesystem: MinePrefs::FileUtils.new, files_to_install: [])
         @filesystem = filesystem
         @files_to_install = files_to_install
@@ -10,8 +10,8 @@ module MinePrefs
 
       def execute
         files_to_install.each do |file|
-          source = file.target
-          destination = Values::BackupPathname.new(source)
+          destination = file.target
+          source = Values::BackupPathname.new(destination)
 
           filesystem.mv(source, destination)
         end

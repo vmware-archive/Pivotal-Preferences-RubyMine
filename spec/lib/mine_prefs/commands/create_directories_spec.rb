@@ -1,8 +1,9 @@
 require "mine_prefs/commands/create_directories"
+require "mine_prefs/commands/remove_empty_directories"
 
 module MinePrefs
   module Commands
-    describe CreateDirectories do
+    describe "creating and removing directories" do
       context "the installation bundle assumes directories already exist in the target" do
         before do
           installation_bundle.stub(:directories_assumed_to_exist_in_target) do
@@ -12,9 +13,9 @@ module MinePrefs
 
         describe "#execute" do
           it "creates directories assumed to exist in the target" do
-            command = CreateDirectories.new(filesystem: spy_filesystem)
+            command = CreateDirectories.new(filesystem: spy_filesystem, files_to_install: installation_bundle)
 
-            command.execute(installation_bundle)
+            command.execute
 
             expect(spy_filesystem).to have_created_directory(assumed_dir)
           end
@@ -22,9 +23,9 @@ module MinePrefs
 
         describe "#undo" do
           it "removes empty directories that were assumed to exist in the target" do
-            command = CreateDirectories.new(filesystem: spy_filesystem)
+            command = RemoveEmptyDirectories.new(filesystem: spy_filesystem, files_to_install: installation_bundle)
 
-            command.undo(installation_bundle)
+            command.execute
 
             expect(spy_filesystem).to have_removed_directory(assumed_dir)
           end

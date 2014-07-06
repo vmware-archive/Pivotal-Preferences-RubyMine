@@ -1,18 +1,12 @@
 module MinePrefs
   module Commands
-    class CreateDirectories
+    class RemoveEmptyDirectories
       def initialize(filesystem: MinePrefs::FileUtils.new, files_to_install: [])
         @filesystem = filesystem
         @files_to_install = files_to_install
       end
 
       def execute
-        assumed_dirs.each do |target_dir|
-          filesystem.mkdir_p(target_dir)
-        end
-      end
-
-      def undo
         assumed_dirs.reverse.each do |target_dir|
           filesystem.rmdir(target_dir)
         end
