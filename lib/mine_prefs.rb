@@ -52,7 +52,7 @@ MinePrefs::Installation.new(
   files_to_install: files_to_install,
   install_commands: [
     MinePrefs::Commands::CreateDirectories.new,
-    MinePrefs::Commands::Backups::Backup.new,
+    MinePrefs::Commands::Backup.new,
     MinePrefs::Commands::Symlink.new
   ]
 ).public_send(feature)
