@@ -7,9 +7,9 @@ module MinePrefs
     module Commands
       def self.Uninstall(preferences: [])
         Script.new(commands: [
-          MinePrefs::Domain::Commands::RemoveSymlink.new(files_to_install: preferences),
-          MinePrefs::Domain::Commands::Restore.new(files_to_install: preferences),
-          MinePrefs::Domain::Commands::RemoveEmptyDirectories.new(files_to_install: preferences),
+          MinePrefs::Domain::Commands::RemoveSymlink.new(preferences: preferences),
+          MinePrefs::Domain::Commands::Restore.new(preferences: preferences),
+          MinePrefs::Domain::Commands::RemoveEmptyDirectories.new(preferences: preferences),
         ])
       end
     end

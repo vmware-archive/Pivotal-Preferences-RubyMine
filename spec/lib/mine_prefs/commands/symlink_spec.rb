@@ -20,7 +20,7 @@ module MinePrefs
 
             Symlink.new(
               filesystem: filesystem,
-              files_to_install: installation_bundle,
+              preferences: installation_bundle,
             ).execute
           end
         end
@@ -39,7 +39,7 @@ module MinePrefs
 
             RemoveSymlink.new(
               filesystem: filesystem,
-              files_to_install: installation_bundle,
+              preferences: installation_bundle,
             ).execute
           end
         end

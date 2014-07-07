@@ -7,9 +7,9 @@ module MinePrefs
     module Commands
       def self.Install(preferences: [])
         Script.new(commands: [
-          MinePrefs::Domain::Commands::CreateDirectories.new(files_to_install: preferences),
-          MinePrefs::Domain::Commands::Backup.new(files_to_install: preferences),
-          MinePrefs::Domain::Commands::Symlink.new(files_to_install: preferences),
+          MinePrefs::Domain::Commands::CreateDirectories.new(preferences: preferences),
+          MinePrefs::Domain::Commands::Backup.new(preferences: preferences),
+          MinePrefs::Domain::Commands::Symlink.new(preferences: preferences),
         ])
       end
     end

@@ -1,3 +1,6 @@
+require "mine_prefs/domain/execute"
+require "mine_prefs/domain/commands/install"
+
 module MinePrefs
   module Cli
     module Actions

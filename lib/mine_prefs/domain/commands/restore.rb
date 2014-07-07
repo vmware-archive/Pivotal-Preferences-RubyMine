@@ -4,9 +4,9 @@ module MinePrefs
   module Domain
     module Commands
       class Restore
-        def initialize(filesystem: MinePrefs::Domain::FileUtils.new, files_to_install: [])
+        def initialize(filesystem: MinePrefs::Domain::FileUtils.new, preferences: [])
           @filesystem = filesystem
-          @files_to_install = files_to_install
+          @preferences = preferences
         end
 
         def validations
@@ -14,7 +14,7 @@ module MinePrefs
         end
 
         def execute
-          files_to_install.each do |file|
+          preferences.each do |file|
             destination = file.target
             source = Values::BackupPathname.new(destination)
 
@@ -24,7 +24,7 @@ module MinePrefs
 
         private
         attr_reader(
-          :files_to_install,
+          :preferences,
           :filesystem,
         )
       end

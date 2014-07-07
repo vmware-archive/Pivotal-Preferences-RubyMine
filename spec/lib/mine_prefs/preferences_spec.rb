@@ -1,8 +1,8 @@
-require "mine_prefs/domain/files_to_install"
+require "mine_prefs/domain/preferences"
 
 module MinePrefs
   module Domain
-    describe FilesToInstall do
+    describe Preferences do
       context "given an un-nested, relative file path" do
         let(:file) { "install_file" }
 
@@ -15,7 +15,7 @@ module MinePrefs
         end
 
         it "lists the target directory as the only directory assumed to exist" do
-          expect(files_to_install.directories_assumed_to_exist_in_target).to eq(["/target"])
+          expect(preferences.directories_assumed_to_exist_in_target).to eq(["/target"])
         end
       end
 
@@ -31,7 +31,7 @@ module MinePrefs
         end
 
         it "lists the target directory as the only directory assumed to exist" do
-          expect(files_to_install.directories_assumed_to_exist_in_target).to eq(["/target"])
+          expect(preferences.directories_assumed_to_exist_in_target).to eq(["/target"])
         end
       end
 
@@ -39,7 +39,7 @@ module MinePrefs
         let(:file) { "some_dir/some_other_dir/some_file" }
 
         it "returns the nested directories in the order they should be created" do
-          expect(files_to_install.directories_assumed_to_exist_in_target).to eq(
+          expect(preferences.directories_assumed_to_exist_in_target).to eq(
             [
               "/target",
               "/target/some_dir",
@@ -53,7 +53,7 @@ module MinePrefs
         let(:file) { "/source/some_dir/some_other_dir/some_file" }
 
         it "returns the nested directories in the order they should be created" do
-          expect(files_to_install.directories_assumed_to_exist_in_target).to eq(
+          expect(preferences.directories_assumed_to_exist_in_target).to eq(
             [
               "/target",
               "/target/some_dir",
@@ -63,15 +63,15 @@ module MinePrefs
         end
       end
 
-      let(:files_to_install) do
-        FilesToInstall.new(
+      let(:preferences) do
+        Preferences.new(
           target_location: "/target",
           source_location: "/source",
           files_or_directories_to_install: [file]
         )
       end
 
-      let(:file_to_install) { files_to_install.first }
+      let(:file_to_install) { preferences.first }
     end
   end
 end

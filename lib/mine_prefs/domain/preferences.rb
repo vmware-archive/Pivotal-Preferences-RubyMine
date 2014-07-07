@@ -1,6 +1,6 @@
 module MinePrefs
   module Domain
-    class FilesToInstall
+    class Preferences
       include Enumerable
 
       attr_reader :target_location, :source_location, :files_or_directories_to_install

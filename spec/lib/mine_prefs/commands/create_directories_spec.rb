@@ -14,7 +14,7 @@ module MinePrefs
 
           describe "#execute" do
             it "creates directories assumed to exist in the target" do
-              command = CreateDirectories.new(filesystem: spy_filesystem, files_to_install: installation_bundle)
+              command = CreateDirectories.new(filesystem: spy_filesystem, preferences: installation_bundle)
 
               command.execute
 
@@ -24,7 +24,7 @@ module MinePrefs
 
           describe "#undo" do
             it "removes empty directories that were assumed to exist in the target" do
-              command = RemoveEmptyDirectories.new(filesystem: spy_filesystem, files_to_install: installation_bundle)
+              command = RemoveEmptyDirectories.new(filesystem: spy_filesystem, preferences: installation_bundle)
 
               command.execute
 

@@ -2,9 +2,9 @@ module MinePrefs
   module Domain
     module Commands
       class CreateDirectories
-        def initialize(filesystem: MinePrefs::Domain::FileUtils.new, files_to_install: [])
+        def initialize(filesystem: MinePrefs::Domain::FileUtils.new, preferences: [])
           @filesystem = filesystem
-          @files_to_install = files_to_install
+          @preferences = preferences
         end
 
         def validations
@@ -26,11 +26,11 @@ module MinePrefs
         private
         attr_reader(
           :filesystem,
-          :files_to_install,
+          :preferences,
         )
 
         def assumed_dirs
-          files_to_install.directories_assumed_to_exist_in_target
+          preferences.directories_assumed_to_exist_in_target
         end
       end
     end

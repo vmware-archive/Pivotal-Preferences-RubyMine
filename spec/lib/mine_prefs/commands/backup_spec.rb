@@ -17,7 +17,7 @@ module MinePrefs
 
             Restore.new(
               filesystem: filesystem,
-              files_to_install: installation_bundle,
+              preferences: installation_bundle,
             ).execute
           end
         end
@@ -35,7 +35,7 @@ module MinePrefs
 
             Backup.new(
               filesystem: filesystem,
-              files_to_install: installation,
+              preferences: installation,
             ).execute
           end
         end

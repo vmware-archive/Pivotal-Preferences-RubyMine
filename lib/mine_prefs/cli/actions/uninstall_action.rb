@@ -1,3 +1,6 @@
+require "mine_prefs/domain/execute"
+require "mine_prefs/domain/commands/uninstall"
+
 module MinePrefs
   module Cli
     module Actions

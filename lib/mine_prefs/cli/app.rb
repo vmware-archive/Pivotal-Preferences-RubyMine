@@ -59,7 +59,7 @@ module MinePrefs
 
           pivotal_rubymine_preferences_directory = File.join(__dir__, "..", "..", "..", "RubyMineXX")
 
-          MinePrefs::Domain::FilesToInstall.new(
+          MinePrefs::Domain::Preferences.new(
             target_location: ENV['TARGET_DIR'] || existing_target_directory || fallback_target_directory,
             source_location: pivotal_rubymine_preferences_directory,
             files_or_directories_to_install:
