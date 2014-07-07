@@ -10,11 +10,11 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="true" />
       <option name="RHTML" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="HAML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="false" />
       <option name="SQL" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="HAML" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
@@ -28,12 +28,13 @@
       <option name="XML" value="false" />
       <option name="RUBY" value="true" />
       <option name="RHTML" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="HAML" value="false" />
       <option name="CSS" value="false" />
       <option name="JAVA_SCRIPT" value="false" />
       <option name="SQL" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="HAML" value="false" />
       <option name="OTHER" value="false" />
     </context>
   </template>
 </templateSet>
+

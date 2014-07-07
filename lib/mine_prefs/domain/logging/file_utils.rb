@@ -1,7 +1,7 @@
-require "mine_prefs/method_hook"
+require "mine_prefs/domain/method_hook"
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::FileUtils,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::FileUtils,
   method_name: :symlink,
   before: ->(source, target) do
     $logger.debug "Symlinking: "
@@ -11,8 +11,8 @@ MinePrefs::MethodHook.new(
   end
 )
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::FileUtils,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::FileUtils,
   method_name: :mv,
   before: ->(source, target) do
     $logger.debug "Moving: "
@@ -22,16 +22,16 @@ MinePrefs::MethodHook.new(
   end
 )
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::FileUtils,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::FileUtils,
   method_name: :rmdir,
   before: ->(path) do
     $logger.debug "Removing dir if empty: #{path}"
   end
 )
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::FileUtils,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::FileUtils,
   method_name: :rm,
   before: ->(path) do
     $logger.debug "Removing #{path}"

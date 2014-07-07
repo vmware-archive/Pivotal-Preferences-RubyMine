@@ -1,15 +1,15 @@
-require "mine_prefs/method_hook"
+require "mine_prefs/domain/method_hook"
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::Commands::Symlink,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::Commands::Symlink,
   method_name: :execute,
   before: ->(*) do
     $logger.info "Symlinking Installation Files"
   end
 )
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::Commands::RemoveSymlink,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::Commands::RemoveSymlink,
   method_name: :execute,
   before: ->(*) do
     $logger.info "Removing symlinks to Pivotal RubyMine preferences"

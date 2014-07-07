@@ -1,15 +1,15 @@
-require "mine_prefs/method_hook"
+require "mine_prefs/domain/method_hook"
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::Commands::Backup,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::Commands::Backup,
   method_name: :execute,
   before: ->(*args) do
     $logger.info "Backing up existing RubyMine preference files"
   end
 )
 
-MinePrefs::MethodHook.new(
-  klass: MinePrefs::Commands::Restore,
+MinePrefs::Domain::MethodHook.new(
+  klass: MinePrefs::Domain::Commands::Restore,
   method_name: :execute,
   before: ->(*args) do
     $logger.info "Restoring RubyMine preference files from backup"
