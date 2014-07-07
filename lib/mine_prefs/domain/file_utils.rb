@@ -1,3 +1,5 @@
+require "fileutils"
+
 module MinePrefs
   module Domain
     class FileUtils

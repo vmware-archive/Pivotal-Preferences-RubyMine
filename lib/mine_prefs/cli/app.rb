@@ -1,3 +1,6 @@
+require "logger"
+require "optparse"
+
 module MinePrefs
   module Cli
     class App
