@@ -7,7 +7,7 @@ module MinePrefs
         end
 
         def failed_validations
-          commands.collect(&:validations).flatten.collect(&:invalid?).reduce([], &:+)
+          commands.collect(&:failed_validations).flatten
         end
 
         def execute

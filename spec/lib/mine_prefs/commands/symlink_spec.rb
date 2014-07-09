@@ -6,41 +6,78 @@ module MinePrefs
     module Commands
       describe "symlinking and unlinking preferences" do
         describe "symlinking" do
-          it "symlinks all files to install into the target" do
-            installation_bundle = [
-              double(:installation_pair,
-                source: "/source/foo/bar",
-                target: "/baz/foo/bar"
-              )
-            ]
-
-            filesystem = double :filesystem
-
-            filesystem.should_receive(:symlink).with("/source/foo/bar", "/baz/foo/bar")
-
+          let(:command) do
             Symlink.new(
-              filesystem: filesystem,
-              preferences: installation_bundle,
-            ).execute
+              filesystem: filesystem_spy,
+              preferences: preferences,
+            )
+          end
+
+          context "when the target does not already contain symlinks" do
+            before do
+              def filesystem_spy.symlink?(*)
+                false
+              end
+            end
+
+            it "symlinks all files to install into the target" do
+              execute_command
+
+              expect(filesystem_spy).to have_symlinked(source, target)
+            end
+          end
+
+          context "when the target already contains symlinks" do
+            before do
+              def filesystem_spy.symlink?(*)
+                true
+              end
+            end
+
+            it "is invalid" do
+              expect(command).not_to be_valid
+            end
           end
         end
 
         describe "unlinking" do
-          it "removes the symlinks" do
-            installation_bundle = [
-              double(:installation_pair,
-                target: "/baz/foo/bar"
-              )
-            ]
-
-            filesystem = double :filesystem
-
-            filesystem.should_receive(:rm).with("/baz/foo/bar")
-
+          let(:command) do
             RemoveSymlink.new(
-              filesystem: filesystem,
-              preferences: installation_bundle,
-            ).execute
+              filesystem: filesystem_spy,
+              preferences: preferences,
+            )
+          end
+
+          it "removes the symlinks" do
+            execute_command
+            expect(filesystem_spy).to have_removed(target)
+          end
+        end
+
+        def execute_command
+          command.execute
+        end
+
+        let(:preferences) { [double(:preference, target: target, source: source)] }
+        let(:target) { "/some/target" }
+        let(:source) { "/some/source" }
+        let(:filesystem_spy) { FilesystemSpy.new }
+
+        class FilesystemSpy
+          def symlink(source, target)
+            @symlinked = [source, target]
+          end
+
+          def rm(file)
+            @removed = file
+          end
+
+          def has_symlinked?(source, target)
+            @symlinked == [source, target]
+          end
+
+          def has_removed?(file)
+            @removed == file
           end
         end
       end

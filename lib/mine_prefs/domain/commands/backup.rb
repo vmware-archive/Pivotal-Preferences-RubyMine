@@ -9,7 +9,7 @@ module MinePrefs
           @preferences = preferences
         end
 
-        def validations
+        def failed_validations
           []
         end
 

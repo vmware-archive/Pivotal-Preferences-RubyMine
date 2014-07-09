@@ -1,4 +1,5 @@
 require "fileutils"
+require "pathname"
 
 module MinePrefs
   module Domain
@@ -16,6 +17,10 @@ module MinePrefs
           file_utils.mv source.to_s, target.to_s, force: true
         rescue SOURCE_FILE_NOT_FOUND
         end
+      end
+
+      def symlink?(path)
+        Pathname(path).symlink?
       end
 
       def symlink(source, target)
