@@ -1,5 +1,5 @@
 .idea
-tmp/RubyMine60
+tmp
 .DS_Store
 *.swp
 .ruby-version
