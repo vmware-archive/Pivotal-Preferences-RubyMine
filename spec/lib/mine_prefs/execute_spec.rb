@@ -1,12 +1,15 @@
 require "mine_prefs/domain/execute"
+require "support/mocks/command_spy"
+require "support/mocks/command_stub"
+require "support/mocks/observer_spy"
 
 module MinePrefs
   module Domain
     describe "Execute" do
-      context "when the command has no failed validations" do
+      context "when command is valid" do
         before do
-          command.stub(:failed_validations) do
-            []
+          command.stub(:valid?) do
+            true
           end
         end
 
@@ -23,52 +26,24 @@ module MinePrefs
         end
       end
 
-      context "when the command has failed validations" do
+      context "when the command is invalid" do
         before do
-          command.stub(:failed_validations) do
-            [failed_validation]
+          command.stub(:valid?) do
+            false
           end
         end
 
         it "notifies observers of failure" do
           execute
 
-          expect(observer).to have_observed_failed_validations([failed_validation])
+          expect(observer).to have_observed_failed_validations(command.failed_validations)
         end
 
-        let(:failed_validation) { double :failed_validation }
+        let(:command) { Spec::Support::Mocks::CommandStub.new(failed_validations: "failed validations!") }
       end
 
-      let(:command) { CommandSpy.new }
-      let(:observer) { ObserverSpy.new }
-
-      class ObserverSpy
-        def command_succeeded(*)
-          @success = true
-        end
-
-        def validations_failed(failed_validations)
-          @failed_validations = failed_validations
-        end
-
-        def has_observed_success?
-          @success
-        end
-
-        def has_observed_failed_validations?(failed_validations)
-          @failed_validations == failed_validations
-        end
-      end
-
-      class CommandSpy
-        def execute
-          @executed = true
-        end
-
-        def has_executed?
-          @executed
-        end
-      end
+      let(:command) { Spec::Support::Mocks::CommandSpy.new }
+      let(:observer) { Spec::Support::Mocks::ObserverSpy.new }
 
       def execute
         MinePrefs::Domain::Execute(command: command, observer: observer)

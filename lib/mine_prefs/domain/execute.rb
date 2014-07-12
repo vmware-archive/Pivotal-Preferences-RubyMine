@@ -1,7 +1,7 @@
 module MinePrefs
   module Domain
     def self.Execute(command: nil, observer: nil)
-      if command.failed_validations.empty?
+      if command.valid?
         command.execute
         observer.command_succeeded(command)
       else
