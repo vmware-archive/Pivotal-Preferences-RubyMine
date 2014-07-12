@@ -1,5 +1,6 @@
 require "mine_prefs/domain/commands/symlink"
 require "mine_prefs/domain/commands/remove_symlink"
+require "support/mocks/filesystem_spy"
 
 module MinePrefs
   module Domain
@@ -61,25 +62,7 @@ module MinePrefs
         let(:preferences) { [double(:preference, target: target, source: source)] }
         let(:target) { "/some/target" }
         let(:source) { "/some/source" }
-        let(:filesystem_spy) { FilesystemSpy.new }
-
-        class FilesystemSpy
-          def symlink(source, target)
-            @symlinked = [source, target]
-          end
-
-          def rm(file)
-            @removed = file
-          end
-
-          def has_symlinked?(source, target)
-            @symlinked == [source, target]
-          end
-
-          def has_removed?(file)
-            @removed == file
-          end
-        end
+        let(:filesystem_spy) { Spec::Support::Mocks::FilesystemSpy.new }
       end
     end
   end

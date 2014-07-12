@@ -20,6 +20,10 @@ module MinePrefs
           puts "\nUninstall complete!"
         end
 
+        def validations_failed(*)
+          puts "Doing nothing, it appears no preferences are installed."
+        end
+
         private
         attr_reader :preferences
       end

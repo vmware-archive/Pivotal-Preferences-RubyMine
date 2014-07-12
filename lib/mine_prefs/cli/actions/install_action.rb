@@ -21,7 +21,7 @@ module MinePrefs
         end
 
         def validations_failed(*)
-          puts "\nDetected existing installation. Uninstall, then install."
+          puts "Detected existing installation. Uninstall, then install."
         end
 
         attr_reader :preferences
