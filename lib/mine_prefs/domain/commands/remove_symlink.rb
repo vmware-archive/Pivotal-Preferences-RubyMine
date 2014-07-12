@@ -1,14 +1,12 @@
+require "mine_prefs/domain/commands/command"
+
 module MinePrefs
   module Domain
     module Commands
-      class RemoveSymlink
+      class RemoveSymlink < Command
         def initialize(filesystem: MinePrefs::Domain::FileUtils.new, preferences: preferences)
           @filesystem = filesystem
           @preferences = preferences
-        end
-
-        def failed_validations
-          []
         end
 
         def execute

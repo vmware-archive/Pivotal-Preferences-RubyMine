@@ -1,13 +1,15 @@
+require "mine_prefs/domain/commands/command"
+
 module MinePrefs
   module Domain
     module Commands
-      class Script
+      class Script < Command
         def initialize(commands: [])
           @commands = commands
         end
 
-        def failed_validations
-          commands.collect(&:failed_validations).flatten
+        def validations
+          commands.collect(&:validations).flatten
         end
 
         def execute

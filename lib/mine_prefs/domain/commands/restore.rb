@@ -1,16 +1,13 @@
 require "mine_prefs/domain/values/backup_pathname"
+require "mine_prefs/domain/commands/command"
 
 module MinePrefs
   module Domain
     module Commands
-      class Restore
+      class Restore < Command
         def initialize(filesystem: MinePrefs::Domain::FileUtils.new, preferences: [])
           @filesystem = filesystem
           @preferences = preferences
-        end
-
-        def failed_validations
-          []
         end
 
         def execute

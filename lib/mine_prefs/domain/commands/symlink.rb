@@ -1,26 +1,16 @@
+require "mine_prefs/domain/commands/command"
+
 module MinePrefs
   module Domain
     module Commands
-      class Symlink
+      class Symlink < Command
         def initialize(filesystem: MinePrefs::Domain::FileUtils.new, preferences: preferences)
           @filesystem = filesystem
           @preferences = preferences
         end
 
-        def failed_validations
-          validations.reject(&:valid?)
-        end
-
         def validations
           [SymlinkNotPresent.new(preferences: preferences, filesystem: filesystem)]
-        end
-
-        def valid?
-          failed_validations.empty?
-        end
-
-        def invalid?
-          !valid?
         end
 
         def execute
