@@ -10,6 +10,12 @@
     <keyboard-shortcut first-keystroke="shift control meta alt LEFT" />
     <keyboard-shortcut first-keystroke="shift control meta alt RIGHT" />
   </action>
+  <action id="MoveTabDown">
+    <keyboard-shortcut first-keystroke="control meta alt DOWN" />
+  </action>
+  <action id="MoveTabRight">
+    <keyboard-shortcut first-keystroke="control meta alt RIGHT" />
+  </action>
   <action id="SplitHorizontally">
     <keyboard-shortcut first-keystroke="shift control meta alt DOWN" />
   </action>
