@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-raise "You must use ruby 2.0.0 or greater to use this command" unless RUBY_VERSION.start_with?("2")
-
-$LOAD_PATH.unshift "./lib"
-
-require "mine_prefs"
